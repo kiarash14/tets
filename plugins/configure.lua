@@ -1,9 +1,9 @@
 local function do_keyboard_config(chat_id)
     local keyboard = {
         inline_keyboard = {
-            {{text = '🛠 Menu', callback_data = 'config:menu:'..chat_id}},
-            {{text = '⚡️ Antiflood', callback_data = 'config:antiflood:'..chat_id}},
-            {{text = '🌈 Media', callback_data = 'config:media:'..chat_id}},
+            {{text = '🛠 تنظیمات | Settings', callback_data = 'config:menu:'..chat_id}},
+            {{text = '⚡️ ضد فلود | AntiFlood', callback_data = 'config:antiflood:'..chat_id}},
+            {{text = '🌈 رسانه ها | Media', callback_data = 'config:media:'..chat_id}},
         }
     }
     
@@ -23,7 +23,7 @@ local function action(msg, blocks)
         local res = api.sendKeyboard(msg.from.id, '_Navigate the keyboard to change the settings_', keyboard, true)
         if not misc.is_silentmode_on(msg.chat.id) then --send the responde in the group only if the silent mode is off
             if res then
-                api.sendMessage(msg.chat.id, '_I\'ve sent you the keyboard in private_', true)
+                api.sendMessage(msg.chat.id, '_I\'ve send you settings,media and antiflood in private_ | من به شما تنظیمات،ضد فلود و رسانه ها را فرستادم', true)
             else
                 misc.sendStartMe(msg, msg.ln)
             end
@@ -34,7 +34,7 @@ end
 return {
     action = action,
     triggers = {
-        config.cmd..'config$',
+        config.cmd..'group$',
         '^###cb:config:back:'
     }
 }
