@@ -65,7 +65,7 @@ local function action(msg, blocks)
         
         api.sendMessage(msg.chat.id, message)
     end
-    if blocks[1] == 'restore' then
+    if blocks[1] == 'myfac' then
         if msg.chat.type ~= 'private' then
             if roles.is_admin(msg) then
                 local chat_id = msg.chat.id
@@ -142,7 +142,7 @@ local function action(msg, blocks)
                     end
                 end
                 
-                api.sendMessage(msg.chat.id, message..'\nDone.\nUse /config command to change the group settings')
+                api.sendMessage(msg.chat.id, message..'\nYour All Group Settings Restored\nIf You Like Chnange *Settings* send /group command to change the group settings')
             end
         end
     end
@@ -155,7 +155,7 @@ return {
     action = action,
     triggers = {
         config.cmd..'(restorebot)$',
-        config.cmd..'(restore)$',
+        config.cmd..'(myfac)$',
         config.cmd..'(rst) (%d+)$'
     }
 }
