@@ -1,30 +1,29 @@
 return {
-	bot_api_key = '198733539:AAGV9pV-ry2He6PozSlAWRPXW3tO5DoNSe4',
+	bot_api_key = '223710412:AAEuDD-5rKCKnpyZqqDhXoM48_8PUs1VfB4',
 	version = '4.0',
 	cmd = '^[/!#]',
 	db = 2, --default redis db: 0
 	admin = {
-		owner = 23646077,
+		owner = 63950574,
 		admins = {
-			[141956218] = true
+			[63950574] = true
 		}
 	},
-	log_chat = -1001057801239,
+	log_chat = -1001084705680,
 	bot_settings = {
 		cache_time = {
-			adminlist = 18000, --5 hours (18000s)
+			adminlist = 7200, --2 hours (7200s)
 		},
 		testing_mode = true,
 		multipurpose_mode = true,
 		notify_bug = true,
 		log_api_errors = false
 	},
-	channel = '@groupbutler_ch', --channel username with the '@'
+	channel = '@ApPRoids', --channel username with the '@'
 	help_groups = {
 		['Internatonal (English)'] = 'https://telegram.me/joinchat/CHYUej9jFxFN12MQqrLnUg', --group link, not username!
 		['Italian'] = false, --'https://telegram.me/joinchat/CHYUej7oPES-Gdw5hmgAXg',
-		['Persian'] = 'https://telegram.me/joinchat/CHYUej8VRwlY9dzoKMERog',
-		['Spanish'] = false
+		['Persian'] = false
 	},
 	languages = 'languages.lua',
 	plugins = {
@@ -55,15 +54,6 @@ return {
 	},
 	available_languages = {
 		['en'] = 'English 🇬🇧',
-		['it'] = 'Italiano 🇮🇹',
-		['es'] = 'Español 🇪🇸',
-		['br'] = 'Português 🇧🇷',
-		['ru'] = 'русский 🇷🇺',
-		['de'] = 'Deutschland 🇩🇪',
-		['sv'] = 'Svensk 🇸🇪',
-		['ar'] = 'العربية 🇸🇩',
-		['fr'] = 'Français 🇫🇷',
-		['tc'] = '中文 🇨🇳',
 		['fa'] = 'فارسی 🇮🇷'
 		--more to come
 	},
