@@ -56,7 +56,7 @@ local function do_keyboard_private()
     		{text = '📢 Discussion Group', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
 	    },
 	    {
-	        {text = '📕 All the commands', callback_data = 'user'}
+	        {text = '📕 Help', callback_data = 'user'}
         }
     }
     return keyboard
