@@ -1,6 +1,6 @@
 return {
-	bot_api_key = '223710412:AAHHTmdx5HA2zQ2xupAXXHaRZ40fWUoScBg',
-	version = '4.0',
+	bot_api_key = '255583206:AAGbm-mrXmg0ON7xMnoxvTF_hFTMASxEeK8',
+	version = 'By Arian(1.0)',
 	cmd = '^[/!#]',
 	db = 2, --default redis db: 0
 	admin = {
