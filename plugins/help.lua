@@ -59,9 +59,6 @@ local function do_keyboard_private()
 	    },
 	    {
 	        {text = '📕 Help | راهنما', callback_data = 'user'},
-            },
-            {
-                {text = '📬 Discussion Chat | گروه پشتیبانی', url = 'https://telegram.me'}
         }
     }
     return keyboard
