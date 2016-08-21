@@ -53,10 +53,27 @@ local function do_keyboard_private()
     keyboard.inline_keyboard = {
     	{
     		{text = '👥 Add me to a group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
-    		{text = '📢 Bot channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+    	    }و
+    	    {
+    		{text = '🎫 Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
-	        {text = '📕 Help / راهنما', callback_data = 'user'}
+	        {text = '📕 Help ', callback_data = 'user'},
+	    }و
+	    {
+	    	{text = '➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖', url = ''},
+	    },
+	    {
+    		{text = '👥 افزودن من به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
+    	    }و
+    	    {
+    		{text = '🎫 کانال', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+	    },
+	    {
+	        {text = '📕 راهنما ', callback_data = 'user'},
+	    }و
+	    
+	    
         }
     }
     return keyboard
@@ -67,7 +84,12 @@ local function do_keyboard_startme()
     keyboard.inline_keyboard = {
     	{
     		{text = 'Start me', url = 'https://telegram.me/'..bot.username}
-	    }
+	    }و
+	    {
+	    	{text = '➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖', url = ''},
+	    },
+	    {
+	    	{text = 'شروع کردن من', url = 'https://telegram.me/'..bot.username}
     }
     return keyboard
 end
