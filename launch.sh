@@ -1,6 +1,6 @@
 #!/bin/bash
 
 while true; do
-	./arian
+	lua bot.lua
 	sleep 4s
 done
