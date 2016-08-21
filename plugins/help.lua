@@ -53,10 +53,15 @@ local function do_keyboard_private()
     keyboard.inline_keyboard = {
     	{
     		{text = '👥 Add me to a group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
-    		{text = '📢 Discussion Group', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
+    	    },
+    	    {
+    	    	{text = '📢 Discussion Group(Persian)', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
+    	    },
+    	    {
+    		{text = '📢 Discussion Group(English)', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
 	    },
 	    {
-	        {text = '📕 H e l p', callback_data = 'user'}
+	        {text = '📕 All The Commands', callback_data = 'user'}
         }
     }
     return keyboard
