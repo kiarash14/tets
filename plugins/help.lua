@@ -55,7 +55,7 @@ local function do_keyboard_private()
     		{text = '👥 Add me to a group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
 	    },
 	    {
-	        {text = '📕 Help ', callback_data = 'user'},
+	        {text = '📕 Help', callback_data = 'user'},
 	    },
 	    {
 	    	{text = '📣 Discussion Group', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'}
