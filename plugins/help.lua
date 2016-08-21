@@ -55,7 +55,7 @@ local function do_keyboard_private()
     		{text = '👥 Add me to a group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
     	    },
     	    {
-    	    	{text = '🎩 Discussion Group(Persian)', url = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'},
+    	    	{text = '📢 گروه پشتیبانی', url = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'},
     	    },
     	    {
     		{text = '📢 Discussion Group(English)', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
