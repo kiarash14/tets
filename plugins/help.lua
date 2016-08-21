@@ -3,7 +3,7 @@ local function make_keyboard(mod, mod_current_position)
 	keyboard.inline_keyboard = {}
 	if mod then --extra options for the mod
 	    local list = {
-	        ['Banhammer ب'] = 'banhammer',
+	        ['Banhammer'] = 'banhammer',
 	        ['Group info'] = 'info',
 	        ['Flood manager'] = 'flood',
 	        ['Media settings'] = 'media',
@@ -39,9 +39,9 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🔰 User | commands', callback_data = 'user'}}
+		bottom_bar = {{text = '🔰 User commands', callback_data = 'user'}}
 	else
-	    bottom_bar = {{text = '🔰 Admin comسلامmands', callback_data = 'mod'}}
+	    bottom_bar = {{text = '🔰 Admin commands', callback_data = 'mod'}}
 	end
 	table.insert(bottom_bar, {text = 'Info', callback_data = 'fromhelp:info'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
@@ -56,7 +56,7 @@ local function do_keyboard_private()
     		{text = '📢 Bot channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
-	        {text = '📕 All the commands', callback_data = 'user'}
+	        {text = '📕 Help | راهنما', callback_data = 'user'}
         }
     }
     return keyboard
@@ -163,5 +163,3 @@ return {
 	    '^###cb:(warns)$',
 	    '^###cb:(char)$',
 	    '^###cb:(settings)$',
-    }
-}
