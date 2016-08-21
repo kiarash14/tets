@@ -56,7 +56,7 @@ local function do_keyboard_private()
     		{text = '📢 Bot channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
-	        {text = '📕 Help | راهنما', callback_data = 'user'}
+	        {text = '📕 Help / راهنما', callback_data = 'user'}
         }
     }
     return keyboard
