@@ -72,12 +72,6 @@ local function do_keyboard_startme()
     keyboard.inline_keyboard = {
     	{
     		{text = 'Start me', url = 'https://telegram.me/'..bot.username}
-	    },
-	    {
-	    	{text = '➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖', url = ''},
-	    },
-	    {
-	    	{text = 'شروع کردن من', url = 'https://telegram.me/'..bot.username}
 	    }
     }
     return keyboard
