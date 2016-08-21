@@ -53,7 +53,6 @@ local function do_keyboard_private()
     keyboard.inline_keyboard = {
     	{
     		{text = '👥 Add me to a group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
-    		{text = '🎫 Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
 	        {text = '📕 Help ', callback_data = 'user'},
