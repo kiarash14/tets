@@ -61,10 +61,7 @@ local function do_keyboard_private()
     		{text = '📢 Discussion Group(English)', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
 	    },
 	    {
-	        {text = '📕 All The Commands', callback_data = 'user'},
-	    },
-	    {
-	    	{text = '🗻 How To Make Admin Bot', url = 'https://telegram.me/spamproofchannel'}
+	        {text = '📕 All The Commands', callback_data = 'user'}
         }
     }
     return keyboard
