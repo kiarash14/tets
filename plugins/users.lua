@@ -2,9 +2,8 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
-    		{text = 'GitHub', url = 'https://github.com/RememberTheAir/GroupButler'},
-    		{text = 'Rate me!', url = 'https://telegram.me/storebot?start='..bot.username},
+    		{text = '📬 Channel | کانال', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+    		{text = '⌚ Rate me! | رای دادن به من!', url = 'https://telegram.me/storebot?start='..bot.username},
 		}
 	}
 	return keyboard
@@ -104,7 +103,7 @@ local function do_keyboard_userinfo(user_id, ln)
 	local keyboard = {
 		inline_keyboard = {
 			{{text = lang[ln].userinfo.remwarns_kb, callback_data = 'userbutton:remwarns:'..user_id}},
-			{{text ='🔨 Ban', callback_data = 'userbutton:banuser:'..user_id}},
+			{{text ='🔨 Ban | بن', callback_data = 'userbutton:banuser:'..user_id}},
 		}
 	}
 	
@@ -163,7 +162,7 @@ local action = function(msg, blocks)
  		else
  			id = msg.chat.id
  		end
- 		api.sendReply(msg, '`'..id..'`', true)
+ 		api.sendReply(msg, '👤 `'..id..'`', true)
  	end
     if blocks[1] == 'welcome' then
         
