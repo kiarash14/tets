@@ -87,6 +87,7 @@ local function do_keyboard_startme()
 	    },
 	    {
 	    	{text = 'شروع کردن من', url = 'https://telegram.me/'..bot.username}
+	    }
     }
     return keyboard
 end
