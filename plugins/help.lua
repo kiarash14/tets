@@ -163,3 +163,5 @@ return {
 	    '^###cb:(warns)$',
 	    '^###cb:(char)$',
 	    '^###cb:(settings)$',
+    }
+}
