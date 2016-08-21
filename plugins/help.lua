@@ -61,7 +61,7 @@ local function do_keyboard_private()
 	        {text = '📕 Help ', callback_data = 'user'},
 	    },
 	    {
-	    	{text = '➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖', url = ''},
+	    	{text = '➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖', url = 'https://telegram.me'},
 	    },
 	    {
     		{text = '👥 افزودن من به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
