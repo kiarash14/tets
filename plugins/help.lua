@@ -54,6 +54,7 @@ local function do_keyboard_private()
     	{
     		{text = '👥 Add me to a group | افزودن ربات به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
             },
+            {
     		{text = '⌚ Bot channel | کانال ربات', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
