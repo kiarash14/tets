@@ -41,7 +41,7 @@ local function make_keyboard(mod, mod_current_position)
     if mod then
 		bottom_bar = {{text = '🔰 User | commands', callback_data = 'user'}}
 	else
-	    bottom_bar = {{text = '🔰 Admin commands', callback_data = 'mod'}}
+	    bottom_bar = {{text = '🔰 Admin comسلامmands', callback_data = 'mod'}}
 	end
 	table.insert(bottom_bar, {text = 'Info', callback_data = 'fromhelp:info'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
