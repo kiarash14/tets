@@ -39,7 +39,7 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🔰 User commands', callback_data = 'user'}}
+		bottom_bar = {{text = '🔰 User | commands', callback_data = 'user'}}
 	else
 	    bottom_bar = {{text = '🔰 Admin commands', callback_data = 'mod'}}
 	end
