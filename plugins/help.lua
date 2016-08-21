@@ -70,7 +70,7 @@ local function do_keyboard_private()
     		{text = '🎫 کانال', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
 	    },
 	    {
-	        {text = '📕 راهنما ', callback_data = 'user'},
+	        {text = '📕 راهنما ', callback_data = 'user'}
 	    }
     }
     return keyboard
