@@ -6,7 +6,7 @@ local emoji = {
 return {
     en = {
         config = {
-            private = '_I\'ve sent you the settings keyboard in private_',
+            private = '_Config KeyBoard Send To Your Private_',
             main = 'Surf this keyboard to change the group settings'
         },
         status = {
@@ -165,7 +165,7 @@ The inline keyboard has three sub-menus:
 `/groups` : show the list of the discussion groups
 `/help` : show this message.'
 
-If you like this bot, please leave the vote you think it deserves [here](https://telegram.me/storebot?start=groupbutler_bot)']],
+[Channel](https://telegram.me/AriNews']],
 		    private = 'Hello *&&&1* '..emoji.shaking_hand..', nice to meet you!\n'
                     ..'I\'m Group Butler, the first administration bot using the official Bot API.\n'
                     ..'\n*I can do a lot of cool stuffs*, here\'s a short list:\n'
@@ -184,7 +184,7 @@ If you like this bot, please leave the vote you think it deserves [here](https:/
         },
         links = {
             no_link = '*No link* for this group. Ask the owner to generate one',
-            link = '[&&&1](&&&2)',
+            link = '✅ *Group Link* : [&&&1](&&&2)',
             link_no_input = 'This is not a *public supergroup*, so you need to write the link near /setlink',
             link_invalid = 'This link is *not valid!*',
             link_updated = 'The link has been updated.\n*Here\'s the new link*: [&&&1](&&&2)',
