@@ -15,6 +15,9 @@ local function sendRequest(url)
 	end
 	
 	local tab = JSON.decode(dat)
+	
+	if code ~= 200 then
+		print(clr.red..code, tab.description..clr.reset)
 		
 		if code == 400 then code = api.getCode(tab.description) end --error code 400 is general: try to specify
 		db:hincrby('bot:errors', code, 1)
