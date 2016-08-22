@@ -3,32 +3,32 @@ local function make_keyboard(mod, mod_current_position)
 	keyboard.inline_keyboard = {}
 	if mod then --extra options for the mod
 	    local list = {
-	        ['Banhammer'] = 'banhammer',
-	        ['Group info'] = 'info',
-	        ['Flood manager'] = 'flood',
-	        ['Media settings'] = 'media',
-	        ['Welcome settings'] = 'welcome',
-	        ['General settings ➖ تنظیمات ظاهری'] = 'settings',
-	        ['Extra commands'] = 'extra',
-	        ['Warns'] = 'warns',
-	        ['Characters strictness'] = 'char',
-	        ['Links'] = 'links',
-	        ['Languages'] = 'lang'
+                ['بن/مسدود کردن'] = 'banhammer',
+                ['اطلاعات گروه'] ='info',
+                ['فلود منیجر'] = 'flood',
+                ['تنظیمات مدیا'] = 'media',
+                ['تنظیمات خوش آمد گویی'] = 'welcome',
+                ['تنظیمات ظاهری'] = 'settings',
+                ['دستورات پیشرفته'] = 'extra',
+                ['اخطار ها'] = 'warns',
+                ['تنظیمات کاراکتر ها'] = 'char',
+                ['لینک ها'] = 'links',
+                ['زبان ها'] = 'lang'
         }
         local line = {}
         for k,v in pairs(list) do
             --if mod_current_position ~= v:gsub('!', '') then --(to remove the current tab button)
             if next(line) then
-                local button = {text = '📍'..k, callback_data = v}
+                local button = {text = '🎫'..k, callback_data = v}
                 --change emoji if it's the current position button
-                if mod_current_position == v then button.text = '💡 '..k end
+                if mod_current_position == v then button.text = '✅ '..k end
                 table.insert(line, button)
                 table.insert(keyboard.inline_keyboard, line)
                 line = {}
             else
-                local button = {text = '📍'..k, callback_data = v}
+                local button = {text = '🎫'..k, callback_data = v}
                 --change emoji if it's the current position button
-                if mod_current_position == v:gsub('!', '') then button.text = '💡 '..k end
+                if mod_current_position == v:gsub('!', '') then button.text = '✅  '..k end
                 table.insert(line, button)
             end
             --end --(to remove the current tab button)
@@ -39,11 +39,11 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-		bottom_bar = {{text = '🔰 User commands', callback_data = 'user'}}
-	else
-	    bottom_bar = {{text = '🔰 Admin commands', callback_data = 'mod'}}
-	end
-	table.insert(bottom_bar, {text = 'اطلاعات', callback_data = 'fromhelp:info'}) --insert the "Info" button
+  bottom_bar = {{text = '🎩 کاربران عادی', callback_data = 'user'}}
+ else
+     bottom_bar = {{text = '👤 ادمین ها', callback_data = 'mod'}}
+ end
+	table.insert(bottom_bar, {text = '🎫 برگشت به صفحه اصلی', callback_data = 'home'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -53,12 +53,15 @@ local function do_keyboard_private()
     keyboard.inline_keyboard = {
     	{
     		{text = '👥 افزودن من به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
-    	    },
-    	    {
+    	     },
+             {
+      {text = '📣 کانال ما', url = 'https://telegram.me/SpamProofChannel'},
+             },    	    
+             {
     	    	{text = '📢 گروه پشتیبانی', url = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'},
     		{text = '📢 گروه پشتیبانی انگلیسی', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
-	    },
-	    {
+	     },
+	     {
 	        {text = '📕 راهنما', callback_data = 'user'}
         }
     }
@@ -105,6 +108,14 @@ local action = function(msg, blocks)
         if query == 'info_button' then
             keyboard = do_keybaord_credits()
 		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].credits, keyboard, true)
+		    return
+		end
+    if msg.cb then
+        local query = blocks[1]
+        local text
+        if query == 'home' then
+            keyboard = do_keybaord_private()
+            local message = lang[msg.ln].help.private:compose(msg.from.first_name:mEscape())
 		    return
 		end
         local with_mods_lines = true
