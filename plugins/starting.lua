@@ -164,7 +164,6 @@ return {
 	    '^###cb:(user)$',
 	    '^###cb:(mod)$',
 	    '^###cb:(info)$',
-	    '^###cb:(info)$',
 	    '^###cb:(home)$',
 	    '^###cb:(flood)$',
 	    '^###cb:(media)$',
