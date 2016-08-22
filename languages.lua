@@ -3942,17 +3942,19 @@ The inline keyboard has three sub-menus:
 /info` : نمایش برخی اطلاعات مربوط به ربات
 /groups` : get the list of the discussion groups
 /help` : نمایش این پیام]],
-		    private = 'Hello *&&&1* '..emoji.shaking_hand..', nice to meet you!\n'
-                    ..'I\'m Group Butler, the first administration bot using the official Bot API.\n'
-                    ..'\n*I can do a lot of cool stuffs*, here\'s a short list:\n'
-                    ..'• I can *kick or ban* users (even in normal groups) by reply/username\n'
-                    ..'• You can use me to set the group rules and a description\n'
-                    ..'• I have a flexible *anti-flood* system\n'
-                    ..'• I can *welcome new users* with a customizable message, or if you want with a gif or a sticker\n'
-                    ..'• I can *warn* users, and ban them when they reach the maximum number of warnings\n'
-                    ..'• I can also warn, kick or ban users when they post a specific media\n'
-                    ..'...and more, below you can find the "all commands" button to get the whole list!\n'
-                    ..'\nI work better if you add me to the group administrators (otherwise I won\'t be able to kick or ban)!',
+		     private = 'سلام, *&&&1*!\n'
+                    ..'من یک ربات برای مدیریت گروه هم اکنون بالای 1000 گروه را مدیریت می کنم 🤗\n'
+                    ..'\n_و چه کمکی به شما میتونم بکنم؟_\n'
+                    ..'بسیار عالی، من قابلیت های بسیار زیادی دارم\n'
+                    ..'• شما می توانید کاربران را در گروه اخراج کنید و یا از گروه محروم کنید (حتی در گروه های معمولی)\n'
+                    ..'• ✍🏻 میتوانید قوانین و توضیحاتی برای گروه بنویسید\n'
+                    ..'• 🔰و میتوانید سیستم ضد اسپم فوق پیشرفته من را فعال کنید و همینطور می توانم کاربرانی که در گروه شما تبلیغ می کنند اخراج کنم (بخش تنظیمات رسانه)🔰\n'
+                    ..'• 🗣 میتوانم پیام خوش آمد گویی مورد نظر شما را به کاربران بدم و حتی میتوانید اینکارا برای اولین بار در تلگرام با استیکر 🏖 یا گیف 🌠 انجام دهم.\n'
+                    ..'• ⚠️ می توانم به کاربران اخطار بدم و کاربرانی که اخطار زیاد گرفتند را اخراج کنم‼️\n'
+                    ..'• می توانم رسانه های ارسالی به گروه شما را مدیریت کنم : گیف 🌠، عکس 🌅، ویدئو📼، صدای ضبط شده 🗣، شماره مخطابین 👥، استیکر 🏖، لینک گروه 🌐\n'
+                    ..'برای انجام کارهای بالا لطفا من را مدیر گروه کنید \n[🐳 مدیر کردن اسپم پروف](https://telegram.me/KeyWordCh/2) \n'
+                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
+                    ..'برای تغیر زبان به _انگلیسی_ /lang را فرستاده و سپس روی en کلیک نمایید.\n',
             group_success = '_من به شما پیام خصوصی خواهم داد_',
             group_not_success = '_لطفا اول به من پیام دهید تا بتوانم به شما پیام بفرستم_',
             initial = 'You can surf this keyboard to see *all the available commands*',
