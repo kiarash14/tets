@@ -68,7 +68,7 @@ local action = function(msg, blocks)
 				if msg.cb then
 					api.editMessageText(msg.chat.id, msg.message_id, 'Select a group:', keyboard, true)
 				else
-					api.sendKeyboard(msg.chat.id, 'یکی از گروه ها را انتخاب کنید 👥\nSelect A group 👥', keyboard, true)
+					api.sendKeyboard(msg.chat.id, 'یکی از گروه ها را انتخاب کنید 👥' keyboard, true)
 				end
 			end
 		end
