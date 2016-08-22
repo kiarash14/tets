@@ -110,11 +110,6 @@ local action = function(msg, blocks)
 		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].credits, keyboard, true)
 		    return
 		end
-        if query == 'home' then
-            keyboard = do_keybaord_private()
-		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].private, keyboard, true)
-		    return
-		end
         local with_mods_lines = true
         if query == 'user' then
             text = lang[msg.ln].help.all
@@ -164,7 +159,6 @@ return {
 	    '^###cb:(user)$',
 	    '^###cb:(mod)$',
 	    '^###cb:(info)$',
-	    '^###cb:(home)$',
 	    '^###cb:(flood)$',
 	    '^###cb:(media)$',
 	    '^###cb:(links)$',
