@@ -165,22 +165,22 @@ The inline keyboard has three sub-menus:
 `/groups` : show the list of the discussion groups
 `/help` : show this message.'
 
-[Channel](https://telegram.me/AriNews']],
-		    private = 'Hello *&&&1* '..emoji.shaking_hand..', nice to meet you!\n'
-                    ..'I\'m Group Butler, the first administration bot using the official Bot API.\n'
-                    ..'\n*I can do a lot of cool stuffs*, here\'s a short list:\n'
-                    ..'• I can *kick or ban* users (even in normal groups) by reply/username\n'
-                    ..'• You can use me to set the group rules and a description\n'
-                    ..'• I have a flexible *anti-flood* system\n'
-                    ..'• I can *welcome new users* with a customizable message, or if you want with a gif or a sticker\n'
-                    ..'• I can *warn* users, and ban them when they reach the maximum number of warnings\n'
-                    ..'• I can also warn, kick or ban users when they post a specific media\n'
-                    ..'...and more, below you can find the "all commands" button to get the whole list!\n'
-                    ..'\nI work better if you add me to the group administrators (otherwise I won\'t be able to kick or ban)!',
+[Channel](https://telegram.me/AriNews)']],
+		     private = 'Hi, *&&&1*!\n'
+                    ..'I/m KeyWord~Im Manneging up 100 Groups!🤗\n'
+                    ..'\n_How i can helping you?_\n'
+                    ..'🎩* I Can Do Them:*\n'
+                    ..'• *You Can Kick Or Ban USers In GRoups Or Super Groups*\n'
+                    ..'• ✍🏻*You can write tules and about for your group*\n'
+                    ..'• 🔰*I Auto Switch AntiSpam Mode!*🔰\n'
+                    ..'• ⚠*You Can Warn USers When They Sends : gif - photo - sticker - film*\n'
+                    ..'•For use me geting admin me in your group \n[ 🐳 Make SpamProof Admin 🐳](https://telegram.me/KeyWordCh/2) \n'
+                    ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
+                    ..'For Change Languages To *Persian*,Send /lang Then Click On Fa\n',
             group_success = '_I\'ve sent you the help message in private_',
             group_not_success = '_Please message me first so I can message you_',
             initial = 'You can surf this keyboard to see *all the available commands*',
-            kb_header = 'Tap on a button to see the *related commands*'
+            kb_header = 'Select one of *related* commands'
         },
         links = {
             no_link = '*No link* for this group. Ask the owner to generate one',
