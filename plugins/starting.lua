@@ -43,7 +43,7 @@ local function make_keyboard(mod, mod_current_position)
  else
      bottom_bar = {{text = '👤 ادمین ها', callback_data = 'mod'}}
  end
-	table.insert(bottom_bar, {text = 'Info', callback_data = 'fromhelp:info'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = '🎫 کانال', url = 'https://telegram.me/spamproofchannel'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
