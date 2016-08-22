@@ -105,7 +105,7 @@ local action = function(msg, blocks)
     if msg.cb then
         local query = blocks[1]
         local text
-        if query == 'info_button' then
+        if query == 'info' then
             keyboard = do_keybaord_credits()
 		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].credits, keyboard, true)
 		    return
