@@ -8,7 +8,7 @@ local function make_keyboard(mod, mod_current_position)
 	        ['Flood manager'] = 'flood',
 	        ['Media settings'] = 'media',
 	        ['Welcome settings'] = 'welcome',
-	        ['General settings'] = 'settings',
+	        ['General settings ➖ تنظیمات ظاهری'] = 'settings',
 	        ['Extra commands'] = 'extra',
 	        ['Warns'] = 'warns',
 	        ['Characters strictness'] = 'char',
