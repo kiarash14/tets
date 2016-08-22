@@ -43,7 +43,7 @@ local function make_keyboard(mod, mod_current_position)
  else
      bottom_bar = {{text = '👤 ادمین ها', callback_data = 'mod'}}
  end
-	table.insert(bottom_bar, {text = '🎫 برگشت به صفحه اصلی', callback_data = 'home'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = '🎫 برگشت به صفحه اصلی', callback_data = 'home'}) 
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -110,9 +110,6 @@ local action = function(msg, blocks)
 		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].credits, keyboard, true)
 		    return
 		end
-    if msg.cb then
-        local query = blocks[1]
-        local text
         if query == 'home' then
             keyboard = do_keybaord_private()
             local message = lang[msg.ln].help.private:compose(msg.from.first_name:mEscape())
