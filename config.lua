@@ -34,7 +34,7 @@ return {
 		'dashboard.lua',
 		'banhammer.lua',
 		'users.lua',
-		'help.lua',
+		'starting.lua',
 		'rules.lua',
 		'about.lua',
 		'service.lua',
