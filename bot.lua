@@ -54,7 +54,7 @@ function bot_init(on_reload) -- The function run when the bot is started or relo
 	print('\n'..clr.blue..'BOT RUNNING:'..clr.reset, clr.red..'[@'..bot.username .. '] [' .. bot.first_name ..'] ['..bot.id..']'..clr.reset..'\n')
 	if not on_reload then
 		db:hincrby('bot:general', 'starts', 1)
-		api.sendAdmin('*Bot started!*\n_'..os.date('On %A, %d %B %Y\nAt %X')..'_\n'..#plugins..' plugins loaded', true)
+		api.sendAdmin('*Bot Started*\nSpamProof Groups Loaded', true)
 	end
 	
 	-- Generate a random seed and "pop" the first random number. :)
