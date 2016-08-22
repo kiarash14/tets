@@ -14,7 +14,7 @@ end
 
 local action = function(msg, blocks)
     
-    if msg.chat.type ~= 'private' then return end
+    if msg.chat.type == 'private' or msg.chat.type == 'group' or msg.chat.type == 'supergroup' then return end
     
 	if blocks[1] == 'ping' then
 		api.sendMessage(msg.from.id, '*Pong!*', true)
