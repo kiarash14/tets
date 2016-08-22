@@ -19,11 +19,12 @@ return {
 		notify_bug = true,
 		log_api_errors = false
 	},
-	channel = '@ApPRoids', --channel username with the '@'
+	channel = '@SpamProofChannel', --channel username with the '@'
 	help_groups = {
-		['Internatonal (English)'] = 'https://telegram.me/joinchat/CHYUej9jFxFN12MQqrLnUg', --group link, not username!
-		['Italian'] = false, --'https://telegram.me/joinchat/CHYUej7oPES-Gdw5hmgAXg',
-		['Persian'] = false
+		['Internatinal Group'] = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A', --group link, not username!
+		['Italian'] = 'https://telegram.me/joinchat/CHYUej7oPES-Gdw5hmgAXg',
+		['Persian'] = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g',
+		['If You Report A Bug Top Here'] = 'https://telegram.me/Arian721',
 	},
 	languages = 'languages.lua',
 	plugins = {
@@ -72,7 +73,7 @@ return {
 		['settings'] = {
 			['Welcome'] = 'on',
 			['Extra'] = 'on',
-			['Flood'] = 'off',
+			['Flood'] = 'on',
 			['Silent'] = 'off',
 			['Rules'] = 'off'
 		},
@@ -111,7 +112,7 @@ return {
 			['contact'] = 'ok',
 			['file'] = 'ok',
 			['link'] = 'ok',
-			['TGlink'] = 'ok'
+			['TGlink'] = 'notok'
 		},
 	},
 	private_settings = {
@@ -136,7 +137,7 @@ return {
 
 		[110] = 'PEER_ID_INVALID', --user never started the bot
 		[111] = 'message is not modified', --the edit message method hasn't modified the message
-		[112] = 'Can\'t parse message text: Can\'t find end of the entity starting at byte offset %d+', --the markdown is wrong and breaks the delivery
+		[112] = 'Wrong Markdown %d+', --the markdown is wrong and breaks the delivery
 		[113] = 'group chat is migrated to a supergroup chat', --group updated to supergroup
 		[114] = 'Message can\'t be forwarded', --unknown
 		[115] = 'Message text is empty', --empty message
