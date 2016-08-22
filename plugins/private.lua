@@ -2,12 +2,11 @@ local function do_keybaord_credits()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = 'Channel', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
-    		{text = 'GitHub', url = 'https://github.com/RememberTheAir/GroupButler'},
-    		{text = 'Rate me!', url = 'https://telegram.me/storebot?start='..bot.username},
+    		{text = '🎫 کانال ما', url = 'https://telegram.me/'..config.channel:gsub('@', '')},
+    		{text = '📣 رای دادن', url = 'https://telegram.me/storebot?start='..bot.username},
 		},
 		{
-			{text = '👥 Groups', callback_data = 'private:groups'}
+			{text = '👥 گروه ها', callback_data = 'private:groups'}
 		}
 	}
 	return keyboard
@@ -49,7 +48,7 @@ local action = function(msg, blocks)
 	end
 	if blocks[1] == 'info' then
 		local keyboard = do_keybaord_credits()
-		local text = '🕔 Bot version: `'..config.version..'`\n🔗 '..lang[msg.ln].credits, keyboard
+		local text = '🕔 ورژن ربات: `'..config.version..'`\n🔗 '..lang[msg.ln].credits, keyboard
 		if msg.cb then
 			api.editMessageText(msg.chat.id, msg.message_id, text, keyboard, true)
 		else
@@ -69,7 +68,7 @@ local action = function(msg, blocks)
 				if msg.cb then
 					api.editMessageText(msg.chat.id, msg.message_id, 'Select a group:', keyboard, true)
 				else
-					api.sendKeyboard(msg.chat.id, 'Select a group:', keyboard, true)
+					api.sendKeyboard(msg.chat.id, 'یکی از گروه ها را انتخاب کنید 👥\nSelect A group 👥', keyboard, true)
 				end
 			end
 		end
