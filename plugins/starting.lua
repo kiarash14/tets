@@ -43,7 +43,7 @@ local function make_keyboard(mod, mod_current_position)
 	else
 	    bottom_bar = {{text = '🔰 Admin commands', callback_data = 'mod'}}
 	end
-	table.insert(bottom_bar, {text = 'Info', callback_data = 'fromhelp:info'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = 'اطلاعات', callback_data = 'fromhelp:info'}) --insert the "Info" button
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -52,16 +52,14 @@ local function do_keyboard_private()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '👥 Add me to a group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
+    		{text = '👥 افزودن من به گروه', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
     	    },
     	    {
     	    	{text = '📢 گروه پشتیبانی', url = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'},
-    	    },
-    	    {
-    		{text = '📢 Discussion Group(English)', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
+    		{text = '📢 گروه پشتیبانی انگلیسی', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
 	    },
 	    {
-	        {text = '📕 All The Commands', callback_data = 'user'}
+	        {text = '📕 راهنما', callback_data = 'user'}
         }
     }
     return keyboard
