@@ -1,67 +1,66 @@
 local triggers2 = {
-	'^%$(init)$',
-	'^%$(stop)$',
-	'^%$(backup)$',
-	'^%$(bc) (.*)$',
-	'^%$(bcg) (.*)$',
-	'^%$(save)$',
-	'^%$(stats)$',
-	'^%$(lua)$',
-	'^%$(lua) (.*)$',
-	'^%$(run) (.*)$',
-	'^%$(log) (del) (.*)',
-	'^%$(log) (del)',
-	'^%$(log) (.*)$',
-	'^%$(log)$',
-	'^%$(admin)$',
-	'^%$(block) (%d+)$',
-	'^%$(block)$',
-	'^%$(unblock) (%d+)$',
-	'^%$(unblock)$',
-	'^%$(isblocked)$',
-	'^%$(ping redis)$',
-	'^%$(leave) (-%d+)$',
-	'^%$(leave)$',
-	'^%$(post) (.*)$',
-	'^%###(forward)',
-	'^%$(reset) (.*)$',
-	'^%$(reset)$',
-	'^%$(send) (-?%d+) (.*)$',
-	'^%$(send) (.*)$',
-	'^%$(adminmode) (%a%a%a?)$',
-	'^%$(usernames)$',
-	'^%$(api errors)$',
-	'^%$(rediscli) (.*)$',
-	'^%$(genlang)$',
-	'^%$(genlang) (%a%a)$',
-	'^%$(trfile) (%a%a)$',
-	'^%$(trfile)$',
-	'^%$(fixaction) (-%d+)$',
-	'^%$(sendplug) (.*)$',
-	'^%$(sendfile) (.*)$',
-	'^%$(download)$',
-	'^%$(migrate) (%d+)%s(%d+)',
-	'^%$(resid) (%d+)$',
-	'^%$(checkgroups)$',
-	'^%$(update)$',
-	'^%$(subadmin) (yes)$',
-	'^%$(subadmin) (no)$',
-	'^%$(tban) (get)$',
-	'^%$(tban) (flush)$',
-	'^%$(db) (.*)$',
-	'^%$(aa)$',
-	'^%$(remban) (@[%w_]+)$',
-	'^%$(info) (%d+)$',
-	'^%$(prevban) (.*)$',
-	'^%$(rawinfo) (.*)$',
-	'^%$(editpost) (%d%d%d?) (.*)$',
-	'^%$(cleandeadgroups)$',
-	'^%$(initgroup) (-%d+)$',
-	'^%$(remgroup) (-%d+)$',
-	'^%$(remgroup) (true) (-%d+)$',
-	'^%$(cache) (.*)$',
-	'^%$(cacheinit) (.*)$',
-	'^%$(arestore) (.*)?'
+	'^/a(init)$',
+	'^/a(stop)$',
+	'^/a(backup)$',
+	'^/a(bc) (.*)$',
+	'^/a(broadcast) (.*)$',
+	'^/a(save)$',
+	'^/a(keyword)$',
+	'^/a(lua)$',
+	'^/a(lua) (.*)$',
+	'^/a(run) (.*)$',
+	'^/a(log) (del) (.*)',
+	'^/a(log) (del)',
+	'^/a(log) (.*)$',
+	'^/a(log)$',
+	'^/a(admin)$',
+	'^/a(block) (%d+)$',
+	'^/a(block)$',
+	'^/a(unblock) (%d+)$',
+	'^/a(unblock)$',
+	'^/a(isblocked)$',
+	'^/a(ping redis)$',
+	'^/a(leave) (-%d+)$',
+	'^/a(leave)$',
+	'^/a(post) (.*)$',
+	'^###(forward)',
+	'^/a(reset) (.*)$',
+	'^/a(reset)$',
+	'^/a(send) (-?%d+) (.*)$',
+	'^/a(send) (.*)$',
+	'^/a(adminmode) (%a%a%a?)$',
+	'^/a(usernames)$',
+	'^/a(api errors)$',
+	'^/a(rediscli) (.*)$',
+	'^/a(genlang)$',
+	'^/a(genlang) (%a%a)$',
+	'^/a(trfile) (%a%a)$',
+	'^/a(trfile)$',
+	'^/a(fixaction) (-%d+)$',
+	'^/a(sendplug) (.*)$',
+	'^/a(sendfile) (.*)$',
+	'^/a(r)$',
+	'^/a(r) (.*)',
+	'^/a(download)$',
+	'^/a(migrate) (%d+)%s(%d+)',
+	'^/a(resid) (%d+)$',
+	'^/a(checkgroups)$',
+	'^/a(update)$',
+	'^/a(subadmin) (yes)$',
+	'^/a(subadmin) (no)$',
+	'^/a(tban) (get)$',
+	'^/a(tban) (flush)$',
+	'^/a(db) (.*)$',
+	'^a(aa)$',
+	'^/a(remban) (@[%w_]+)$',
+	'^/a(info) (%d+)$',
+	'^/a(prevban) (.*)$',
+	'^/a(rawinfo) (.*)$',
+	'^/a(editpost) (%d%d%d?) (.*)$',
+	'^/a(cleandeadgroups)$',
+	'^/a(initgroup) (-%d+)$',
+	'^/a(remgroup) (-%d+)$',
+	'^/a(remgroup) (true) (-%d+)$',
 }
 
 local logtxt = ''
@@ -81,7 +80,7 @@ local function save_in_redis(hash, text)
 	end
 end
 
-local function bot_leave(chat_id)
+local function bot_leave(chat_id, ln)
 	local res = api.leaveChat(chat_id)
 	if not res then
 		return 'Check the id, it could be wrong'
@@ -104,56 +103,6 @@ local function load_lua(code)
 	return output
 end	
 
-local function rude_restore(chat_id)
-	local text = ''
-	local old_db = 0
-	local new_db = 2
-	db:select(old_db)
-	local extra = db:hgetall('chat:'..chat_id..':extra')
-	local rules = db:get('chat:'..chat_id..':rules')
-	local about = db:get('chat:'..chat_id..':about')
-	local welcome = db:hgetall('chat:'..chat_id..':welcome')
-	
-	db:select(new_db)
-	if next(extra) then
-		local count = 0
-		for key, val in pairs(extra) do
-			db:hset('chat:'..chat_id..':extra', key, val)
-			count = count + 1
-		end
-		text = text..'Extra x'..count..'\n'
-	else
-		text = text..'Extra x0\n'
-	end
-	
-	if next(welcome) then
-		local count = 0
-		for key, val in pairs(extra) do
-			db:hset('chat:'..chat_id..':welcome', key, val)
-			count = count + 1
-		end
-		text = text..'Welcome x'..count..'\n'
-	else
-		text = text..'Welcome x0\n'
-	end
-	
-	if rules then
-		db:hset('chat:'..chat_id..':info', 'rules', rules)
-		text = text..'Rules V'
-	else
-		text = text..'Rules X'
-	end
-	
-	if about then
-		db:hset('chat:'..chat_id..':info', 'about', about)
-		text = text..'About V'
-	else
-		text = text..'About X'
-	end
-	
-	return text
-end
-
 local function match_pattern(pattern, text)
   if text then
   	text = text:gsub('@'..bot.username, '')
@@ -165,9 +114,9 @@ local function match_pattern(pattern, text)
   end
 end
 
-local action = function(msg, blocks)
+local action = function(msg, blocks, ln)
 	
-	if not roles.is_bot_owner(msg.from.id) then return end
+	if not config.admin.admins[msg.from.id] then return end
 	
 	blocks = {}
 	
@@ -187,8 +136,8 @@ local action = function(msg, blocks)
 	end
 	if blocks[1] == 'init' then
 		db:bgsave()
-		local n_plugins = bot_init(true) or 0
-		api.sendReply(msg, '*Bot reloaded!*\n_'..n_plugins..' plugins enabled_', true)
+		bot_init(true)
+		api.sendReply(msg, '*Bot reloaded!*', true)
 	end
 	if blocks[1] == 'stop' then
 		db:bgsave()
@@ -232,7 +181,7 @@ local action = function(msg, blocks)
 	        end
 	    end
 	end
-	if blocks[1] == 'bcg' then
+	if blocks[1] == 'broadcast' then
 		local res = api.sendAdmin(blocks[2], true)
     	if not res then
     		api.sendAdmin('Can\'t broadcast: wrong markdown')
@@ -253,37 +202,41 @@ local action = function(msg, blocks)
 		db:bgsave()
 		api.sendMessage(msg.chat.id, 'Redis updated', true)
 	end
-    if blocks[1] == 'stats' then
-    	local text = '#stats `['..misc.get_date()..']`:\n'
+    if blocks[1] == 'keyword' then
+    	local text = 'Stats Of KeyWord `['..get_date()..']`:\n'
         local hash = 'bot:general'
 	    local names = db:hkeys(hash)
 	    local num = db:hvals(hash)
 	    for i=1, #names do
 	        text = text..'- *'..names[i]..'*: `'..num[i]..'`\n'
 	    end
-	    text = text..'- *last minute msgs*: `'..last_m..'`\n'
+	    text = text..' *The All Messages Send KeyWord Last Minute*: `'..last_m..'`\n'
 	    
-	    --[[local uptime = misc.bash('uptime')
+	    --[[local uptime = bash('uptime')
 	    local ut_d, ut_h = uptime:match('.* up (%d%d) days?, (%d+:%d%d?)')
 	    local la_1, la_2, la_3 = uptime:match('.*(%d%d?%.%d%d), (%d%d?%.%d%d), (%d%d?%.%d%d)')
-	    local n_core = misc.bash('grep processor /proc/cpuinfo | wc -l')
+	    local n_core = bash('grep processor /proc/cpuinfo | wc -l')
 	    text = text..'\n- *uptime*: `'..ut_d..'d, '..ut_h..'h`\n'..'- *load average* ('..n_core:gsub('\n', '')..'): `'..la_1..', '..la_2..', '..la_3..'`']]
-	    
+
+	    --[[local git_pull = bash('git_pull')
+	    local gitpull1, gitpull1 = git_pull:match('.* The (%d%d) Up?, (%d+:%d%d?)*')
+	    text = text..'\n- *Updates :*: *'..gitpull1..'d*']]	    
 	    --other info
 	    if config.channel and config.channel ~= '' then
 	    	local channel_members = api.getChatMembersCount(config.channel).result
-	    	text = text..'- *channel members*: `'..channel_members..'`\n'
+	    	text = text..'*Number Of Members Joined* @KeyWordCh: `'..channel_members..'`\n'
 	    end
 	    local usernames = db:hkeys('bot:usernames')
-	    text = text..'- *usernames cache*: `'..#usernames..'`\n'
+	    text = text..' *Users Username Cache*: `'..#usernames..'`\n'
 	    
 	    --db info
-	    text = text.. '\n*DB stats*\n'
+	    text = text.. '\n*Server Stats*\n'
 		local dbinfo = db:info()
-	    text = text..'- *redis version*: `'..dbinfo.server.redis_version..'`\n'
-	    text = text..'- *uptime days*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
-	    text = text..'- *commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
-	    text = text..'- *keyspace*:\n'
+	    text = text..'*Version Of Redis*: `'..dbinfo.server.redis_version..'`\n'
+	    text = text..'*Uptime*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
+    text = text..'*Git Pull*: `'..dbinfo.server.git_pull..'`\n'
+    text = text..'*Commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
+	    text = text..'- *Keyspace*:\n'
 	    for dbase,info in pairs(dbinfo.keyspace) do
 	    	for real,num in pairs(info) do
 	    		local keys = real:match('keys=(%d+),.*')
@@ -295,17 +248,17 @@ local action = function(msg, blocks)
     	text = text..'- *expired keys*: `'..dbinfo.stats.expired_keys..'`\n'
     	text = text..'- *ops/sec*: `'..dbinfo.stats.instantaneous_ops_per_sec..'`\n'
     	if dbinfo.stats.total_net_input_bytes then
-    		text = text..'- *input bytes*: `'..dbinfo.stats.total_net_input_bytes..'`\n'
+    		text = text..'*Input Bytes*: `'..dbinfo.stats.total_net_input_bytes..'`\n'
     	end
     	if dbinfo.stats.total_net_output_bytes then
-    		text = text..'- *outputput bytes*: `'..dbinfo.stats.total_net_output_bytes..'`\n'
+    		text = text..' *Outputput Bytes*: `'..dbinfo.stats.total_net_output_bytes..'`\n'
     	end
 	    
 		api.sendMessage(msg.chat.id, text, true)
 	end
 	if blocks[1] == 'lua' then
 		if not blocks[2] then
-			api.sendReply(msg, 'Enter a string')
+			api.sendReply(msg, make_text(lang[ln].luarun.enter_string))
 			return
 		end
 		--execute
@@ -459,7 +412,7 @@ local action = function(msg, blocks)
 	if blocks[1] == 'ping redis' then
 		local ris = db:ping()
 		if ris == true then
-			api.sendMessage(msg.from.id, 'Pong (redis)')
+			api.sendMessage(msg.from.id, lang[ln].ping)
 		end
 	end
 	if blocks[1] == 'leave' then
@@ -468,15 +421,15 @@ local action = function(msg, blocks)
 			if msg.chat.type == 'private' then
 				text = 'ID missing'
 			else
-				text = bot_leave(msg.chat.id) 
+				text = bot_leave(msg.chat.id, ln) 
 			end
 		else
-			text = bot_leave(blocks[2])
+			text = bot_leave(blocks[2], ln)
 		end
 		api.sendMessage(msg.from.id, text)
 	end
 	if blocks[1] == 'post' then
-		if not config.channel or config.channel == '' then
+		if config.channel == '' then
 			api.sendMessage(msg.from.id, 'Enter your channel username in config.lua')
 		else
 			local res = api.sendMessage(config.channel, blocks[2], true)
@@ -596,7 +549,7 @@ local action = function(msg, blocks)
 				return
 			end
 			local code = blocks[2]
-			local exists = misc.is_lang_supported(code)
+			local exists = is_lang_supported(code)
 			if not exists then
 				api.sendReply(msg, 'Language not supported')
 			else
@@ -612,20 +565,20 @@ local action = function(msg, blocks)
 			for i,ln in pairs(config.available_languages) do
 				local path = 'ln'..ln:upper()..'.lua'
 				local text = instructions..'\n\n\n\n\n\n\n\n\n\n\n'..vtext(lang[ln])
-				misc.write_file(path, text)
+				write_file(path, text)
 				api.sendDocument(msg.chat.id, path)
 			end
 			return
 		end
 		local code = blocks[2]
-		local exists = misc.is_lang_supported(code)
+		local exists = is_lang_supported(code)
 		if not exists then
 			api.sendReply(msg, 'Language not supported')
 		else
 			local path = 'ln'..code:upper()..'.lua'
 			local instructions = dofile('instructions.lua')
 			local text = instructions..'\n\n\n\n\n\n\n\n\n\n\n'..vtext(lang[code])
-			misc.write_file(path, text)
+			write_file(path, text)
 			api.sendDocument(msg.chat.id, path)
 		end
 	end
@@ -645,6 +598,31 @@ local action = function(msg, blocks)
 	if blocks[1] == 'sendfile' then
 		local path = './'..blocks[2]
 		api.sendDocument(msg.from.id, path)
+	end
+	if blocks[1] == 'r' then
+	    --ignore if no reply
+	    if not msg.reply then
+            api.sendReply(msg, 'Reply to a message')
+			return nil
+		end
+		
+		local input = blocks[2]
+		
+		--ignore if not imput
+		if not input then
+            api.sendMessage(msg.from.id, 'Write something to reply')
+            return
+        end
+		
+		msg = msg.reply_to_message
+		local receiver = msg.forward_from.id
+		
+		local res = api.sendAdmin('*Reply sent:*\n\n'..input, true)
+		if res then
+			api.sendMessage(receiver, input, true)
+		else
+			api.sendAdmin('Wrong markdown')
+		end
 	end
 	if blocks[1] == 'download' then
 		if not msg.reply then
@@ -669,8 +647,8 @@ local action = function(msg, blocks)
 				file_name = msg.audio.title or msg.audio.performer or 'audio.mp3'
 			end
 			local res = api.getFile(file_id)
-			local download_link = misc.misc.telegram_file_link(res)
-			path, code = misc.misc.download_to_file(download_link, file_name)
+			local download_link = telegram_file_link(res)
+			path, code = download_to_file(download_link, file_name)
 			if path then
 				text = 'Saved to:\n'..path
 			else
@@ -682,7 +660,7 @@ local action = function(msg, blocks)
 	if blocks[1] == 'migrate' then
 		local old = '-'..blocks[2]
 		local new = '-'..blocks[3]
-		misc.migrate_chat_info(old, new, true)
+		migrate_chat_info(old, new, true)
 	end
 	if blocks[1] == 'resid' then
 		local user_id = blocks[2]
@@ -722,7 +700,7 @@ local action = function(msg, blocks)
     	db:hincrby('bot:general', 'groups', gin)
 		txt = txt..'\n\nIn = '..gin..'\nOut = '..gout
 		print(txt)
-		misc.write_file('logs/groupcount.txt', txt)
+		write_file('logs/groupcount.txt', txt)
 		api.sendDocument(config.admin, './logs/groupcount.txt')
 	end
 	if blocks[1] == 'update' then
@@ -795,7 +773,7 @@ local action = function(msg, blocks)
 		api.sendAdmin(msg.chat.id)
 	end
 	if blocks[1] == 'remban' then
-		local user_id = misc.res_user(blocks[2])
+		local user_id = res_user(blocks[2])
 		local text
 		if user_id then
 			db:del('ban:'..user_id)
@@ -804,6 +782,13 @@ local action = function(msg, blocks)
 			text = 'Username not stored'
 		end
 		api.sendReply(msg, text)
+	end
+	if blocks[1] == 'prevban' then
+		local id = blocks[2]
+		if blocks[2] == '$chat' then id = msg.chat.id end
+		local text = (db:smembers('chat:'..id..':prevban')) or 'empty'
+		if type(text) == 'table' then text = vtext(text) end
+		api.sendMessage(msg.chat.id, text)
 	end
 	if blocks[1] == 'rawinfo' then
 		local chat_id = blocks[2]
@@ -832,12 +817,12 @@ local action = function(msg, blocks)
 		--not tested
 		local dead_groups = db:smembers('bot:groupsid:removed')
 		for _, chat_id in pairs(dead_groups) do
-			misc.remGroup(chat_id, true)
+			cross.remGroup(chat_id, true)
 		end
 		api.sendReply(msg, 'Done. Groups passed: '..#dead_groups)
 	end
 	if blocks[1] == 'initgroup' then
-		misc.initGroup(blocks[2])
+		cross.initGroup(blocks[2])
 		api.sendMessage(msg.chat.id, 'Done')
 	end
 	if blocks[1] == 'remgroup' then
@@ -847,48 +832,13 @@ local action = function(msg, blocks)
 			full = true
 			chat_id = blocks[3]
 		end
-		misc.remGroup(chat_id, full)
+		cross.remGroup(chat_id, full)
 		api.sendMessage(msg.chat.id, 'Removed (heavy: '..tostring(full)..')')
-	end
-	if blocks[1] == 'cache' then
-		local chat_id
-		if blocks[2] == '$chat' then
-			chat_id = msg.chat.id
-		else
-			chat_id = blocks[2]
-		end
-		local members = db:smembers('cache:chat:'..chat_id..':admins')
-		api.sendMessage(msg.chat.id, chat_id..' '..tostring(#members)..'\n'..vtext(members))
-	end
-	if blocks[1] == 'cacheinit' then
-		local chat_id, text
-		if blocks[2] == '$chat' then
-			chat_id = msg.chat.id
-		else
-			chat_id = blocks[2]
-		end
-		local res, code = misc.cache_adminlist(chat_id)
-		if res then
-			text = 'Cached'
-		else
-			text = 'Failed: '..tostring(code)
-		end
-		api.sendMessage(msg.chat.id, text)
-	end
-	if blocks[1] == 'arestore' then
-		local chat_id
-		if blocks[2] == '$chat' then
-			chat_id = msg.chat.id
-		else
-			chat_id = blocks[2]
-		end
-		local text = rude_restore(chat_id)
-		api.sendMessage(msg.chat.id, text)
 	end
 end
 
 return {
 	action = action,
 	cron = false,
-	triggers = {'^%$', '^###(forward)'}
+	triggers = {'^/a', '^###(forward)'}
 }
