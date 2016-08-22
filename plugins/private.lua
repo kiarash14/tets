@@ -14,7 +14,7 @@ end
 
 local action = function(msg, blocks)
     
-    if msg.chat.type == 'private' or msg.chat.type == 'group' or msg.chat.type == 'supergroup' then return end
+    if msg.chat.type ~= 'private' then return end then return end
     
 	if blocks[1] == 'ping' then
 		api.sendMessage(msg.from.id, '*Pong!*', true)
@@ -48,7 +48,7 @@ local action = function(msg, blocks)
 	end
 	if blocks[1] == 'info' then
 		local keyboard = do_keybaord_credits()
-		local text = '🕔 ورژن ربات: `'..config.version..'`\n🔗 '..lang[msg.ln].credits, keyboard
+		local text = '🕔 Bot Creator And Version: `'..config.version..'`\n🔗 '..lang[msg.ln].credits, keyboard
 		if msg.cb then
 			api.editMessageText(msg.chat.id, msg.message_id, text, keyboard, true)
 		else
@@ -73,7 +73,7 @@ local action = function(msg, blocks)
 			end
 		end
 	end
-	if blocks[1] == 'resolve' then
+	if blocks[1] == 'res' then
 		local id = misc.res_user_group(blocks[2], msg.chat.id)
 		if not id then
 			message = lang[msg.ln].bonus.no_user
@@ -93,7 +93,7 @@ return {
 		config.cmd..'(echo) (.*)$',
 		config.cmd..'(info)$',
 		config.cmd..'(groups)$',
-		config.cmd..'(resolve) (@[%w_]+)$',
+		config.cmd..'(res) (@[%w_]+)$',
 		
 		'^###cb:fromhelp:(info)$',
 		'^###cb:private:(groups)$'
