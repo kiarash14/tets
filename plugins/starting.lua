@@ -112,7 +112,7 @@ local action = function(msg, blocks)
 		end
         if query == 'home' then
             keyboard = do_keybaord_private()
-            local message = lang[msg.ln].help.private:compose(msg.from.first_name:mEscape())
+		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].private, keyboard, true)
 		    return
 		end
         local with_mods_lines = true
