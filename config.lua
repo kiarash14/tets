@@ -23,8 +23,7 @@ return {
 	help_groups = {
 		['Internatinal Group'] = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A', --group link, not username!
 		['Italian'] = 'https://telegram.me/joinchat/CHYUej7oPES-Gdw5hmgAXg',
-		['Persian'] = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g',
-		['If You Report A Bug Top Here'] = 'https://telegram.me/Arian721'
+		['Persian'] = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'
 	},
 	languages = 'languages.lua',
 	plugins = {
