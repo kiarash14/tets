@@ -1,12 +1,13 @@
 return {
-	bot_api_key = '255583206:AAG8yBFsFzB97t4DJVO-IMnUcz6z6blvDTY',
+	bot_api_key = '255583206:AAHRkh_xlYI29rgE4e0ft2hkratv_ft9mEs',
 	version = 'By Arian(1.0)',
 	cmd = '^[/!#?]',
 	db = 2, --default redis db: 0
 	admin = {
-		owner = 169371828,
+		owner = 169371828,107775857,
 		admins = {
-			[169371828] = true
+			[169371828] = true,
+			[107775857] = true
 		}
 	},
 	log_chat = -1001084705680,
