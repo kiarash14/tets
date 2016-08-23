@@ -368,7 +368,7 @@ You can set some exceptions for the antiflood:
         },
         all = {
             dashboard = {
-                private = '_I\ Send Dashboard To Your PV_',
+                private = '_I ve Send Dashboard To Your PV_',
                 first = 'Navigate this message to see *all the info* about this group!',
                 antiflood = '- *Status*: `&&&1`\n- *Action* when an user floods: `&&&2`\n- Number of messages *every 5 seconds* allowed: `&&&3`\n- *Ignored media*:\n&&&4',
                 settings = 'Settings',
