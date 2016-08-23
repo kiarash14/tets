@@ -1,7 +1,7 @@
 return {
-	bot_api_key = '255583206:AAHRkh_xlYI29rgE4e0ft2hkratv_ft9mEs',
+	bot_api_key = '255583206:AAG-IX8lzrHUE_RBJjAw1PeDiAW5yfnN6ZY',
 	version = 'By Arian(1.0)',
-	cmd = '^[/!#?]',
+	cmd = '^[/!#?$]',
 	db = 2, --default redis db: 0
 	admin = {
 		owner = 169371828,107775857,
