@@ -52,11 +52,11 @@ return {
         },
         not_mod = 'You are *not* an admin',
         breaks_markdown = 'This text breaks the markdown.\nMore info about a proper use of markdown [here](https://telegram.me/GroupButler_ch/46).',
-        credits = '*Some useful links:*',
+        credits = '*UseFul Links Of SpamProof* [Bot](https://telegram.me/botnews)',
         extra = {
-            setted = '&&&1 command saved!',
+            setted = '&&&1 Saved!',
             no_commands = 'No commands set!',
-            commands_list = 'List of *custom commands*:\n&&&1',
+            commands_list = 'List Of [Extra](https://telegram.me/spamproofchannel) Commands:\n&&&1',
             command_deleted = '&&&1 command has been deleted',
             command_empty = '&&&1 command does not exist'
         },
@@ -165,7 +165,7 @@ The inline keyboard has three sub-menus:
 `/groups` : show the list of the discussion groups
 `/help` : show this message.'
 
-[Channel](https://telegram.me/AriNews)']],
+[🎫 Channel](https://telegram.me/AriNews)]],
 		     private = 'Hi, *&&&1*!\n'
                     ..'I/m KeyWord~Im Manneging up 100 Groups!🤗\n'
                     ..'\n_How i can helping you?_\n'
@@ -183,7 +183,7 @@ The inline keyboard has three sub-menus:
             kb_header = 'Select one of *related* commands'
         },
         links = {
-            no_link = '*No link* for this group. Ask the owner to generate one',
+            no_link = '`No Link`\nSetlink with /setlink {link}',
             link = '✅ *Group Link* : [&&&1](&&&2)',
             link_no_input = 'This is not a *public supergroup*, so you need to write the link near /setlink',
             link_invalid = 'This link is *not valid!*',
@@ -237,7 +237,7 @@ The inline keyboard has three sub-menus:
                 no_input = 'Welcome and...?',
                 media_setted = 'New media setted as welcome message: ',
                 reply_media = 'Reply to a `sticker` or a `gif` to set them as *welcome message*',
-                custom_setted = '*Custom welcome message saved!*',
+                custom_setted = '*Welcome saved!*',
                 wrong_markdown = '_Not setted_ : I can\'t send you back this message, probably the markdown is *wrong*.\nPlease check the text sent',
             },
             resume = {
@@ -262,7 +262,7 @@ The inline keyboard has three sub-menus:
             Rtl = 'Rtl',
             Silent = 'Silent mode',
             Arab = 'Arab',
-            Rules = '/rules',
+            Rules = 'Rules',
         },
         warn = {
             warn_reply = 'Reply to a message to warn the user',
@@ -279,7 +279,7 @@ The inline keyboard has three sub-menus:
             nowarn = 'The number of warns received by this user has been *reset*'
         },
         setlang = {
-            list = '*List of available languages:*',
+            list = '*List Of Languages:*\n1-فارسی\n2-English',
             success = '*New language set:* &&&1',
         },
 		banhammer = {
@@ -368,7 +368,7 @@ You can set some exceptions for the antiflood:
         },
         all = {
             dashboard = {
-                private = '_I\'ve sent you the group dashboard in private_',
+                private = '_I\ Send Dashboard To Your PV_',
                 first = 'Navigate this message to see *all the info* about this group!',
                 antiflood = '- *Status*: `&&&1`\n- *Action* when an user floods: `&&&2`\n- Number of messages *every 5 seconds* allowed: `&&&3`\n- *Ignored media*:\n&&&4',
                 settings = 'Settings',
@@ -388,7 +388,7 @@ You can set some exceptions for the antiflood:
 • 👤: the bot will reply *in private* with normal users and in the group with admins
 
 *Silent mode*:
-If enabled, the bot won't send a confirmation message in the group when soemone use /config, /dashboard or /help commands.
+If enabled, the bot won't send a confirmation message in the group when soemone use /group, /dashboard or /help commands.
 It will just send the message in private.]],
             media_first = [[Tap on a voice in the right colon to *change the setting*
 You can use the last line to change how many warnings should the bot give before kick/ban someone for a forbidden media
