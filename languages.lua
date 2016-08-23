@@ -165,7 +165,7 @@ The inline keyboard has three sub-menus:
 `/groups` : show the list of the discussion groups
 `/help` : show this message.'
 
-[🎫 Channel](https://telegram.me/AriNews)]],
+[🎫 Channel](https://telegram.me/SpamProofChannel)]],
 		     private = 'Hi, *&&&1*!\n'
                     ..'I/m KeyWord~Im Manneging up 100 Groups!🤗\n'
                     ..'\n_How i can helping you?_\n'
@@ -174,7 +174,7 @@ The inline keyboard has three sub-menus:
                     ..'• ✍🏻*You can write tules and about for your group*\n'
                     ..'• 🔰*I Auto Switch AntiSpam Mode!*🔰\n'
                     ..'• ⚠*You Can Warn USers When They Sends : gif - photo - sticker - film*\n'
-                    ..'•For use me geting admin me in your group \n[ 🐳 Make SpamProof Admin 🐳](https://telegram.me/KeyWordCh/2) \n'
+                    ..'•For use me geting admin me in your group \n[ 🐳 Make SpamProof Admin 🐳](https://telegram.me/SpamProofChannel/2) \n'
                     ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
                     ..'For Change Languages To *Persian*,Send /lang Then Click On Fa\n',
             group_success = '_I\'ve sent you the help message in private_',
