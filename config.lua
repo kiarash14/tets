@@ -1,7 +1,7 @@
 return {
 	bot_api_key = '255583206:AAGc09FD6qyrzQkT6z_ypQwAKBm5Vw9fvXA',
 	version = 'By Arian(1.0)',
-	cmd = '^[~\@/!#?$]',
+	cmd = '^[~@/!#?$]',
 	info = '[🎫 Join Our Channel](https://telegram.me/SpamProofChannel)',
 	db = 2, --default redis db: 0
 	admin = {
