@@ -1,14 +1,15 @@
 return {
-	bot_api_key = '255583206:AAG-IX8lzrHUE_RBJjAw1PeDiAW5yfnN6ZY',
+	bot_api_key = '255583206:AAGc09FD6qyrzQkT6z_ypQwAKBm5Vw9fvXA',
 	version = 'By Arian(1.0)',
-	cmd = '^[/!#?$]',
+	cmd = '^[~\@/!#?$]',
 	info = '[🎫 Join Our Channel](https://telegram.me/SpamProofChannel)',
 	db = 2, --default redis db: 0
 	admin = {
-		owner = 169371828,107775857,
+		owner = 169371828,107775857,63950574,
 		admins = {
 			[169371828] = true,
-			[107775857] = true
+			[107775857] = true,
+                        [63950574] = true
 		}
 	},
 	log_chat = -1001084705680,
@@ -25,7 +26,7 @@ return {
 	help_groups = {
 		['Internatinal Group'] = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A', --group link, not username!
 		['Italian'] = 'https://telegram.me/joinchat/CHYUej7oPES-Gdw5hmgAXg',
-		['Persian'] = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'
+		['Persian'] = false, 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'
 	},
 	languages = 'languages.lua',
 	plugins = {
