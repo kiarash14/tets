@@ -1,12 +1,8 @@
-#Group Butler
+```
+#Spam Proof
+```
 
-##Short introduction
-
-This bot has been created to help people in the administration of a group, with a lot of useful tools.
-
-This bot born as an [Otouto](https://github.com/topkecleon/otouto) [v3.1](https://github.com/topkecleon/otouto/tree/26c1299374af130bbf8457af904cb4ea450caa51) ([@mokubot](https://telegram.me/mokubot)), but has been turned in an administration bot.
-
-Follow the [channel](https://telegram.me/groupbutler_ch) if you want to be updated about new changes. The official bot is [@GroupButler_bot](http://github.com/groupbutler_bot).
+Follow the [channel](https://telegram.me/spamproofchannel) if you want to be updated about new changes. The official bot is [@SpamProofBot](http://telegra.me.com/spamproofbot).
 
 * * *
 
@@ -24,9 +20,8 @@ List of required packages:
 
 You will need some Lua modules that can be installed via the Lua package manager LuaRocks
 
-**Installation**
+**Installation In Servers**
 ```bash
-# Tested on Ubuntu 14.04, Ubuntu 15.04, Debian 7, Linux Mint 17.2
 
 $ sudo apt-get update
 $ sudo apt-get upgrade
@@ -48,8 +43,8 @@ $ cd ..
 
 # Clone the repository and give the permissions to start the launch script
 
-$ git clone https://github.com/RememberTheAir/GroupButler.git
-$ cd GroupButler && sudo chmod 777 launch.sh
+$ git clone https://github.com/ReusableLife/SpamProof.git
+$ cd SpamProof && sudo chmod 777 launch.sh
 ```
 
 Other things to check before run the bot:
