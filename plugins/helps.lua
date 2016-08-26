@@ -38,7 +38,7 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
 if query == 'home' then
-            local keyboard = do_keyboard_private()
+            local keyboard = do_keyboard_private2()
 		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].helps, keyboard, true)
 end
     end
