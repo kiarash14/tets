@@ -2,7 +2,7 @@ local function do_keyboard_private2()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '📃 مارکداون اشتباه', url = 'https://telegram.me/SpamProofChannel/49',
+    		{text = '📃 مارکداون اشتباه', url = 'https://telegram.me/SpamProofChannel/49'},
 	    }
     }
     return keyboard
