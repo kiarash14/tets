@@ -105,14 +105,14 @@ local action = function(msg, blocks)
             end
         end
     end
-    if msg.cb then
+if msg.cb then
         local query = blocks[1]
+        local msg_id = msg.message_id
         local text
-        if query == 'info_button' then
-            keyboard = do_keybaord_credits()
-		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].credits, keyboard, true)
-		    return
-		end
+if query == 'back' then
+            local keyboard = do_keyboard_private()
+		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].help.private:compose(msg.from.first_name:mEscape())
+end
         local with_mods_lines = true
         if query == 'user' then
             text = lang[msg.ln].help.all
