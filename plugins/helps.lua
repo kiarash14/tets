@@ -12,6 +12,9 @@ local function do_keyboard_private2()
 	    },
 	    {
 	    	{text = '📃 درباره ربات', url = 'https://telegram.me/SpamProofChannel/53'},
+	    },
+	    {
+	    	{text = '⁉️ دریافت تنظیمات گروه', url = 'https://telegram.me/SpamProofChannel/54'},
 	    }
     }
     return keyboard
