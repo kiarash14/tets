@@ -15,8 +15,11 @@ local function do_keyboard_private2()
 	    },
 	    {
 	    	{text = '⁉️ دریافت تنظیمات گروه', url = 'https://telegram.me/SpamProofChannel/54'},
-	    }
-    }
+	    },
+	    {
+	    	{text = '➖ برگشت', callback_data = '!back'}
+	    	}
+       }
     return keyboard
 end
 
@@ -24,7 +27,7 @@ local function do_keyboard_startme()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🙃👉 Click here ! 👈🙃', url = 'https://telegram.me/'..bot.username}
+    		{text = '🎫 رفتن به پی وی ربات🙃', url = 'https://telegram.me/'..bot.username}
 	    }
     }
     return keyboard
@@ -40,7 +43,7 @@ local action = function(msg, blocks, ln)
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
 			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
-          api.sendKeyboard(msg.chat.id, 'Hey 👋 Please `start` me in *PV* 🖐😄👇' ,do_keyboard_startme(), true)
+          api.sendKeyboard(msg.chat.id, '📃 برای استفاده از اموزش ها باید این دستور را در پی وی ربات بزنید' ,do_keyboard_startme(), true)
         end
         return
     end
