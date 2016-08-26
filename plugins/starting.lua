@@ -63,6 +63,7 @@ local function do_keyboard_private()
 	     },
 	     {
 	     	{text = '📃 آموزش ها', callback_data = '!home'},
+	     },
 	     {
 	        {text = '📕 راهنما', callback_data = 'user'}
         }
