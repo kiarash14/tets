@@ -111,7 +111,7 @@ if msg.cb then
         local text
 if query == 'back' then
             local keyboard = do_keyboard_private()
-		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].help.private:compose(msg.from.first_name:mEscape())
+		    api.editMessageText(msg.chat.id, msg.message_id, lang[msg.ln].help.private, keyboard, true)
 end
         local with_mods_lines = true
         if query == 'user' then
