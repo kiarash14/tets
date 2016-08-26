@@ -62,6 +62,8 @@ local function do_keyboard_private()
     		{text = '📢 گروه پشتیبانی انگلیسی', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
 	     },
 	     {
+	     	{text = '📃 آموزش ها', callback_data = '!home'},
+	     {
 	        {text = '📕 راهنما', callback_data = 'user'}
         }
     }
