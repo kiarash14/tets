@@ -3,6 +3,15 @@ local function do_keyboard_private2()
     keyboard.inline_keyboard = {
     	{
     		{text = '📃 مارکداون اشتباه', url = 'https://telegram.me/SpamProofChannel/49'},
+	    },
+	    {
+	    	{text = '👤 ادمین کردن ربات', url = 'https://telegram.me/SpamProofChannel/2'},
+	    },
+	    {
+	    	{text = '👥 چرا ربات لینک ها را پاک نمی کند؟', url = 'https://telegram.me/SpamProofChannel/52'},
+	    },
+	    {
+	    	{text = '📃 درباره ربات', url = 'https://telegram.me/SpamProofChannel/53'},
 	    }
     }
     return keyboard
