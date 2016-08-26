@@ -160,6 +160,7 @@ return {
 	    config.cmd..'(start)$',
 	    config.cmd..'(help)$',
 	    '^###cb:(user)$',
+	    '^###cb:!(back)$',	    
 	    '^###cb:(mod)$',
 	    '^###cb:(info)$',
 	    '^###cb:(banhammer)$',
