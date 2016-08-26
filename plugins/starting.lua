@@ -159,7 +159,6 @@ return {
 	triggers = {
 	    config.cmd..'(start)$',
 	    config.cmd..'(help)$',
-	    '^###cb:(!home)$',	    
 	    '^###cb:(user)$',
 	    '^###cb:(mod)$',
 	    '^###cb:(info)$',
