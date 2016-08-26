@@ -53,6 +53,7 @@ return {
         not_mod = 'You are *not* an admin',
         breaks_markdown = 'This text breaks the markdown.\nMore info about a proper use of markdown [here](https://telegram.me/GroupButler_ch/46).',
         credits = '*UseFul Links Of SpamProof* [Bot](https://telegram.me/botnews)',
+        helps = '⁉️ *Some pepole ask from the bot commands, you can select one of your quetions and see the answer!\n_If your answer is about make admin bot, click_ [here](https://telegram.me/SpamProofChannel/2)',        
         extra = {
             setted = '&&&1 Saved!',
             no_commands = 'No commands set!',
@@ -3843,6 +3844,7 @@ The inline keyboard has three sub-menus:
         not_mod = 'شما از مدیران نیستید!',
         breaks_markdown = 'این مدل نشانه گذاری قابل قبول نیست.\n اطلاعات بیشتر برای درست استفاده کردن از قابلیت نشانه گذاری را در [این صفحه](https://telegram.me/GroupButler_ch/46) مطالعه کنید.',
         credits = '*برخی از لینک های کارآمد:*',
+        helps = '⁉️ خیلی از افراد درباره دستور های ربات سیوال می کنند.می توانید با کلیک کردن روی سیوال خود جواب ان را ببینید\nاگر سیوال شما درباره ادمین کردن ربات است,[اینجا](https://telegram.me/SpamProofChannel/2) را بزنید', 
         extra = {
             setted = '&&&1 ذخیره شد',
 			no_commands = 'هیچ دستوری ذخیره نشده!',
