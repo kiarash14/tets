@@ -8,7 +8,7 @@ local function do_keyboard_robot()
     		    		{text = '👤 گروه ها', callback_data = 'private:groups'},
 	    },
 	    {
-	    {text = '🔙 برگشت', callback_data = '!other'}
+	    {text = '🔙 برگشت', callback_data = '!home2'}
         }
     }
     return keyboard
