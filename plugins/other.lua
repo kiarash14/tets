@@ -3,7 +3,7 @@ local function do_keyboard_private3()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '📁 اطلاعات', callback_data = '!back'},
+    		{text = '📁 اطلاعات', callback_data = '!robot'},
 	        },
                 {
 	        {text = '🔙 برگشت به منوی اصلی', callback_data = '!back'},
