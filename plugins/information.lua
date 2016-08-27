@@ -2,14 +2,13 @@ local function do_keyboard_robot()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = 'Share Robot Contact 🤖🤘🏾', callback_data = '!share'},
+    					{text = '📬 کانال ما🏾', url = 'https://telegram.me/spamproofchannel'},
     					},
     					{
-    		    		{text = 'Buy Group 💸', callback_data = '!buygroup'},
-    		    		{text = 'Support 👥', url = 'https://telegram.me/joinchat/BvytAD9KL7J2PE2u0ek3ZA'},
+    		    		{text = '👤 گروه ها', callback_data = 'private:groups'},
 	    },
 	    {
-	    {text = '🔙', callback_data = '!home'}
+	    {text = '🔙', callback_data = '!back'}
         }
     }
     return keyboard
