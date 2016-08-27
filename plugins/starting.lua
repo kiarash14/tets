@@ -43,7 +43,7 @@ local function make_keyboard(mod, mod_current_position)
  else
      bottom_bar = {{text = '👤 ادمین های گروه', callback_data = 'mod'}}
  end
-	table.insert(bottom_bar, {text = '🎲 دیگر', callback_data = '!other'}) 
+	table.insert(bottom_bar, {text = '🎲 دیگر', callback_data = '!home2'}) 
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
