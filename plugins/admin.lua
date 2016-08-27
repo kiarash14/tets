@@ -5,7 +5,7 @@ local triggers2 = {
 	'^%$(bc) (.*)$',
 	'^%$(bcg) (.*)$',
 	'^%$(save)$',
-	'^%$(stats)$',
+	'^%[$/!](stats)$',
 	'^%$(lua)$',
 	'^%$(lua) (.*)$',
 	'^%$(run) (.*)$',
@@ -188,7 +188,7 @@ local action = function(msg, blocks)
 	if blocks[1] == 'init' then
 		db:bgsave()
 		local n_plugins = bot_init(true) or 0
-		api.sendReply(msg, '*Bot reloaded!*\n_'..n_plugins..' plugins enabled_', true)
+		api.sendReply(msg, '*ربات از اول راه اندازی شد*\n_'..n_plugins..' پلاگین فعال شد_', true)
 	end
 	if blocks[1] == 'stop' then
 		db:bgsave()
@@ -254,51 +254,51 @@ local action = function(msg, blocks)
 		api.sendMessage(msg.chat.id, 'Redis updated', true)
 	end
     if blocks[1] == 'stats' then
-    	local text = '#stats `['..misc.get_date()..']`:\n'
+    	local text = '📑 آمار ربات در `['..misc.get_date()..']`:\n'
         local hash = 'bot:general'
 	    local names = db:hkeys(hash)
 	    local num = db:hvals(hash)
 	    for i=1, #names do
 	        text = text..'- *'..names[i]..'*: `'..num[i]..'`\n'
 	    end
-	    text = text..'- *last minute msgs*: `'..last_m..'`\n'
+	    text = text..'📊 پیام های ارسالی در اخرین دقایق: `'..last_m..'`\n'
 	    
 	    --[[local uptime = misc.bash('uptime')
 	    local ut_d, ut_h = uptime:match('.* up (%d%d) days?, (%d+:%d%d?)')
 	    local la_1, la_2, la_3 = uptime:match('.*(%d%d?%.%d%d), (%d%d?%.%d%d), (%d%d?%.%d%d)')
 	    local n_core = misc.bash('grep processor /proc/cpuinfo | wc -l')
-	    text = text..'\n- *uptime*: `'..ut_d..'d, '..ut_h..'h`\n'..'- *load average* ('..n_core:gsub('\n', '')..'): `'..la_1..', '..la_2..', '..la_3..'`']]
+	    text = text..'\n📊 زمان روشن بات: `'..ut_d..'d, '..ut_h..'h`\n'..'- *load average* ('..n_core:gsub('\n', '')..'): `'..la_1..', '..la_2..', '..la_3..'`']]
 	    
 	    --other info
 	    if config.channel and config.channel ~= '' then
 	    	local channel_members = api.getChatMembersCount(config.channel).result
-	    	text = text..'- *channel members*: `'..channel_members..'`\n'
+	    	text = text..'📊 اعضای کانال: `'..channel_members..'`\n'
 	    end
 	    local usernames = db:hkeys('bot:usernames')
-	    text = text..'- *usernames cache*: `'..#usernames..'`\n'
+	    text = text..'📊 کش نام کاربری : `'..#usernames..'`\n'
 	    
 	    --db info
-	    text = text.. '\n*DB stats*\n'
+	    text = text.. '\n📇 آمار db\n'
 		local dbinfo = db:info()
-	    text = text..'- *redis version*: `'..dbinfo.server.redis_version..'`\n'
-	    text = text..'- *uptime days*: `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
-	    text = text..'- *commands processed*: `'..dbinfo.stats.total_commands_processed..'`\n'
-	    text = text..'- *keyspace*:\n'
+	    text = text..'🔰 ورژن ردیس: `'..dbinfo.server.redis_version..'`\n'
+	    text = text..'🔰 زمان روشن بودن ربات (به روز): `'..dbinfo.server.uptime_in_days..'('..dbinfo.server.uptime_in_seconds..' seconds)`\n'
+	    text = text..'🔰 دستورات اجرا شده: `'..dbinfo.stats.total_commands_processed..'`\n'
+	    text = text..'🔰 کی اسپیس:\n'
 	    for dbase,info in pairs(dbinfo.keyspace) do
 	    	for real,num in pairs(info) do
 	    		local keys = real:match('keys=(%d+),.*')
 	    		if keys then
-	    			text = text..'  '..dbase..': `'..keys..'`\n'
+	    			text = text..' 🔰 '..dbase..': `'..keys..'`\n'
 	    		end
 	    	end
     	end
-    	text = text..'- *expired keys*: `'..dbinfo.stats.expired_keys..'`\n'
-    	text = text..'- *ops/sec*: `'..dbinfo.stats.instantaneous_ops_per_sec..'`\n'
+    	text = text..'🔰 دکمه های مصرف شده: `'..dbinfo.stats.expired_keys..'`\n'
+    	text = text..'🔰 اوپس/ثانیه: `'..dbinfo.stats.instantaneous_ops_per_sec..'`\n'
     	if dbinfo.stats.total_net_input_bytes then
-    		text = text..'- *input bytes*: `'..dbinfo.stats.total_net_input_bytes..'`\n'
+    		text = text..'🔰 بایت استفاده شده: `'..dbinfo.stats.total_net_input_bytes..'`\n'
     	end
     	if dbinfo.stats.total_net_output_bytes then
-    		text = text..'- *outputput bytes*: `'..dbinfo.stats.total_net_output_bytes..'`\n'
+    		text = text..'🔰 بایت های خروجی: `'..dbinfo.stats.total_net_output_bytes..'`\n'
     	end
 	    
 		api.sendMessage(msg.chat.id, text, true)
