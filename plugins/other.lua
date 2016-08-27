@@ -10,6 +10,7 @@ local function do_keyboard_private3()
             }
     }
     return keyboard
+end
 
 local function do_keyboard_startme()
     local keyboard = {}
