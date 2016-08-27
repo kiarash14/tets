@@ -2,7 +2,7 @@ local function do_keybaord_credits2()
 	local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '🎫 کانال ما', url = 'https://telegram.me/spamproofchannel},
+    		{text = '🎫 کانال ما', url = 'https://telegram.me/spamproofchannel'},
     		{text = '📣 رای دادن', url = 'https://telegram.me/storebot?start=spamproofbot'},
 		},
 		{
