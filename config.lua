@@ -47,7 +47,8 @@ return {
 		'mediasettings.lua',
 		'private.lua',
 		'admin.lua',
-		'restore.lua',
+		'restore.lua'   
+                'information.lua',
 		'helps.lua',
 		'extra.lua', --has to be the last
 	},
