@@ -34,7 +34,7 @@ end
 
 return {
 	action = action,
-	triggers = = { 
+	triggers = { 
 	    '^/(information)$',
 	    '^###cb:!(robot)',
     }
