@@ -39,11 +39,11 @@ local function make_keyboard(mod, mod_current_position)
     end
     local bottom_bar
     if mod then
-  bottom_bar = {{text = '🎩 کاربران عادی', callback_data = 'user'}}
+  bottom_bar = {{text = '👥 تمام اعضا', callback_data = 'user'}}
  else
-     bottom_bar = {{text = '👤 ادمین ها', callback_data = 'mod'}}
+     bottom_bar = {{text = '👤 ادمین های گروه', callback_data = 'mod'}}
  end
-	table.insert(bottom_bar, {text = '🎫 کانال', url = 'https://telegram.me/spamproofchannel'}) --insert the "Info" button
+	table.insert(bottom_bar, {text = '📑 آموزش ها', callback_data = '!home'}) 
 	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
@@ -58,8 +58,8 @@ local function do_keyboard_private()
       {text = '📣 کانال ما', url = 'https://telegram.me/SpamProofChannel'},
              },    	    
              {
-    	    	{text = '📢 گروه پشتیبانی', url = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'},
-    		{text = '📢 گروه پشتیبانی انگلیسی', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
+    	    	{text = '📊 گروه پشتیبانی', url = 'https://telegram.me/joinchat/ChhotEDUZV-PIwZ5QJFX5g'},
+    		{text = '📊 گروه پشتیبانی انگلیسی', url = 'https://telegram.me/joinchat/ChhotEAd7v63g4lTSodj0A'},
 	     },
 	     {
 	     	{text = '📃 آموزش ها', callback_data = '!home'},
@@ -146,7 +146,7 @@ end
         keyboard = make_keyboard(with_mods_lines, query)
         local res, code = api.editMessageText(msg.chat.id, msg.message_id, text, keyboard, true)
         if not res and code and code == 111 then
-            api.answerCallbackQuery(msg.cb_id, '❗️ Already on this tab')
+            api.answerCallbackQuery(msg.cb_id, '❗️ نمی توانید دوباره وارد شوید')
         elseif query ~= 'user' and query ~= 'mod' and query ~= 'info_button' then
             api.answerCallbackQuery(msg.cb_id, '💡 '..lang[msg.ln].help.mods[query]:sub(1, string.find(lang[msg.ln].help.mods[query], '\n')):mEscape_hard())
         end
