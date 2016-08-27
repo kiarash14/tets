@@ -11,6 +11,10 @@ local function do_keybaord_credits2()
 	}
 	return keyboard
 end
+if msg.cb then
+        local query = blocks[1]
+        local msg_id = msg.message_id
+        local text
 if query == 'robot' then
 		local text = '🕔 Bot Creator And Version: `'..config.version..'`\n🔗 '..lang[msg.ln].credits, keyboard
             local keyboard = do_keyboard_credits2()
