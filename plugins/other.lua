@@ -1,12 +1,22 @@
-local function do_keyboard_other()
+
+local function do_keyboard_private3()
     local keyboard = {}
     keyboard.inline_keyboard = {
+    	{
+    		{text = '📁 اطلاعات', callback_data = '!back'},
+	    }
 		{
-    					{text = '🔙 برگشت به منوی اصلی', callback_data = '!back'},
-    					},
-    					{
-    		    		{text = '📁 اطلاعات', callback_data = '!robot'},
-	        }
+	        {text = '🔙 برگشت به منوی اصلی', callback_data = '!back'},
+            }
+    }
+    return keyboard
+
+local function do_keyboard_startme()
+    local keyboard = {}
+    keyboard.inline_keyboard = {
+    	{
+    		{text = '🙃👉 Click here ! 👈🙃', url = 'https://telegram.me/'..bot.username}
+	    }
     }
     return keyboard
 end
@@ -16,18 +26,23 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[🎲 دیگر گزینه ها:]]
-            local keyboard = do_keyboard_other()
+            local message = [[🎲 اطلاعات دیگر:]]
+            local keyboard = do_keyboard_private3()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
+			if msg.chat.type == 'group' or msg.chat.type == 'supergroup' then
+          api.sendKeyboard(msg.chat.id, 'Hey 👋 Please `start` me in *PV* 🖐😄👇' ,do_keyboard_startme(), true)
+        end
+        return
+    end
 
     if msg.cb then
         local query = blocks[1]
         local msg_id = msg.message_id
         local text
-if query == 'other' then
-            local text = [[🎲 دیگر گزینه ها:]]
-            local keyboard = do_keyboard_other()
+if query == 'home2' then
+            local text = [[🎲 اطلاعات دیگر:]]
+            local keyboard = do_keyboard_private3()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
     end
@@ -40,7 +55,7 @@ return {
 	    '^/(start22)@BeatBotTeamBot$',
 	    '^/(start22)$',
 	    '^/(help22)$',
-	    '^###cb:!(other)',
+	    '^###cb:!(home2)',
 
     }
 }
