@@ -4,8 +4,8 @@ local function do_keyboard_private3()
     keyboard.inline_keyboard = {
     	{
     		{text = '📁 اطلاعات', callback_data = '!back'},
-	    }
-		{
+	        },
+                {
 	        {text = '🔙 برگشت به منوی اصلی', callback_data = '!back'},
             }
     }
