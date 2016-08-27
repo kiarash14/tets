@@ -20,14 +20,12 @@ if query == 'robot' then
             local keyboard = do_keyboard_credits2()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
-    end
-
+    end 
 end
 
 return {
 	action = action,
 	triggers = = { 
 	    '^###cb:!(robot)',
-
     }
 }
