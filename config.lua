@@ -43,6 +43,7 @@ return {
 		'links.lua',
 		'warn.lua',
 		'setlang.lua',
+                'other.lua',
 		'floodmanager.lua',
 		'mediasettings.lua',
 		'private.lua',
