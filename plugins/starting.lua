@@ -45,6 +45,9 @@ local function make_keyboard(mod, mod_current_position)
  end
 	table.insert(bottom_bar, {text = '📁 اطلاعات', callback_data = '!robot'}) 
 	table.insert(keyboard.inline_keyboard, bottom_bar)
+ else 
+	table.insert(bottom_bar, {text = '🔙 برگشت', callback_data = '!back'}) 
+	table.insert(keyboard.inline_keyboard, bottom_bar)
 	return keyboard
 end
 
