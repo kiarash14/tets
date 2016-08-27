@@ -1,5 +1,5 @@
 return {
-	bot_api_key = '255583206:AAHSYwwWJaNBL8iFmqezGIiJg59TgcgXfw8',
+	bot_api_key = '255583206:AAH3-ym3f4exG6shdnm_lNESD6HagKtR-xE',
 	version = 'By Arian(1.0)',
 	cmd = '^[~@/!#?$]',
 	info = '[🎫 Join Our Channel](https://telegram.me/SpamProofChannel)',
