@@ -87,7 +87,7 @@ local function bot_leave(chat_id)
 		return 'Check the id, it could be wrong'
 	else
 		db:hincrby('bot:general', 'groups', -1)
-		return 'Chat leaved!'
+		return '📁 لفت داده شد'
 	end
 end
 
@@ -244,7 +244,7 @@ local action = function(msg, blocks)
 	    else
 	    	for i=1,#groups do
 	    		api.sendMessage(groups[i], blocks[2], true)
-	        	print('Sent', groups[i])
+	        	print('📊 ارسال شد', groups[i])
 	    	end
 	    	api.sendMessage(msg.from.id, 'Broadcast delivered')
 	    end
@@ -259,7 +259,7 @@ local action = function(msg, blocks)
 	    local names = db:hkeys(hash)
 	    local num = db:hvals(hash)
 	    for i=1, #names do
-	        text = text..'- *'..names[i]..'*: `'..num[i]..'`\n'
+	        text = text..'📁 *'..names[i]..'*: `'..num[i]..'`\n'
 	    end
 	    text = text..'📊 پیام های ارسالی در اخرین دقایق: `'..last_m..'`\n'
 	    
