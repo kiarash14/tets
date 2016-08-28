@@ -53,7 +53,7 @@ return {
         not_mod = 'You are *not* an admin',
         breaks_markdown = 'This text breaks the markdown.\nMore info about a proper use of markdown [here](https://telegram.me/GroupButler_ch/46).',
         credits = '*UseFul Links Of SpamProof* [Bot](https://telegram.me/botnews)',
-        helps = '⁉️ *Some pepole ask from the bot commands, you can select one of your quetions and see the answer!\n_If your answer is about make admin bot, click_ [here](https://telegram.me/SpamProofChannel/2)',        
+        helps = '⁉️ *Some pepole ask from the bot commands, you can select one of your quetions and see the answer*!\n_If your answer is about make admin bot, click_ [here](https://telegram.me/SpamProofChannel/2)',        
         extra = {
             setted = '&&&1 Saved!',
             no_commands = 'No commands set!',
@@ -281,7 +281,7 @@ The inline keyboard has three sub-menus:
         },
         setlang = {
             list = '*List Of Languages:*\n1-فارسی\n2-English',
-            success = '*New language set:* &&&1',
+            success = 'The *English 👥* Language Has Been Setted',
         },
 		banhammer = {
             kicked = '&&&1 kicked &&&2!',
@@ -338,7 +338,7 @@ You can set some exceptions for the antiflood:
                 image = 'Images',
                 video = 'Videos',
                 file = 'Documents',
-                TGlink = 'telegram.me links',
+                TGlink = 'Links',
                 voice = 'Vocal messages',
                 gif = 'Gifs',
                 link = 'Links',
@@ -3954,7 +3954,7 @@ The inline keyboard has three sub-menus:
                     ..'• 🗣 میتوانم پیام خوش آمد گویی مورد نظر شما را به کاربران بدم و حتی میتوانید اینکارا برای اولین بار در تلگرام با استیکر 🏖 یا گیف 🌠 انجام دهم.\n'
                     ..'• ⚠️ می توانم به کاربران اخطار بدم و کاربرانی که اخطار زیاد گرفتند را اخراج کنم‼️\n'
                     ..'• می توانم رسانه های ارسالی به گروه شما را مدیریت کنم : گیف 🌠، عکس 🌅، ویدئو📼، صدای ضبط شده 🗣، شماره مخطابین 👥، استیکر 🏖، لینک گروه 🌐\n'
-                    ..'برای انجام کارهای بالا لطفا من را مدیر گروه کنید \n[🐳 مدیر کردن اسپم پروف](https://telegram.me/KeyWordCh/2) \n'
+                    ..'برای انجام کارهای بالا لطفا من را مدیر گروه کنید \n[🐳 مدیر کردن اسپم پروف](https://telegram.me/spamproofchannel) \n'
                     ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
                     ..'برای تغیر زبان به _انگلیسی_ /lang را فرستاده و سپس روی en کلیک نمایید.\n',
             group_success = '_من به شما پیام خصوصی خواهم داد_',
@@ -4058,8 +4058,8 @@ The inline keyboard has three sub-menus:
             nowarn = 'The number of warns received by this user has been *reset*'
         },
         setlang = {
-            list = '*لیست زبان های موجود:*',
-            success = '*زبان جدید ذخیره شد:* &&&1',
+            list = 'زبان های موجود در اسپم پروف :',
+            success = 'زبان فارسی 👥 ذخیره شد',
         },
 		banhammer = {
             kicked = '&&&1 اخراج &&&2!',
