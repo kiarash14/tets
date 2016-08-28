@@ -18,7 +18,7 @@ local function action(msg, blocks)
     local keyboard = do_keyboard_config(chat_id)
     if msg.cb then
         chat_id = msg.target_id
-        api.editMessageText(msg.chat.id, msg.message_id, '_ کیبورد رو برای تغیر تنظیمات انتخاب کن_',', keyboard, true)
+        api.editMessageText(msg.chat.id, msg.message_id, '_ کیبورد رو برای تغیر تنظیمات انتخاب کن_' ,keyboard, true)
     else
         if not roles.is_admin_cached(msg) then return end
         local res = api.sendKeyboard(msg.from.id, '_ کیبورد رو برای تغیر تنظیمات انتخاب کن_', keyboard, true)
