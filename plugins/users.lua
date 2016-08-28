@@ -162,7 +162,7 @@ local action = function(msg, blocks)
  		else
  			id = msg.chat.id
  		end
- 		api.sendReply(msg, '👤 `'..id..'`', true)
+ 		api.sendReply(msg, '🗂 `'..id..'`', true)
  	end
     if blocks[1] == 'welcome' then
         
