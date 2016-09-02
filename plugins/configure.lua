@@ -24,7 +24,7 @@ local function action(msg, blocks)
         local res = api.sendKeyboard(msg.from.id, '_ کیبورد رو برای تغیر تنظیمات انتخاب کن_', keyboard, true)
         if not misc.is_silentmode_on(msg.chat.id) then --send the responde in the group only if the silent mode is off
             if res then
-                api.sendMessage(msg.chat.id, '👤 من به شما تنظیمات،ضد فلود و رسانه ها را فرستادم', true)
+                api.sendMessage(msg.chat.id, '\n'..config.info..'👤 من به شما تنظیمات،ضد فلود و رسانه ها را فرستادم', true)
             else
                 misc.sendStartMe(msg, msg.ln)
             end
