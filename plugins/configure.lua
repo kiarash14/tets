@@ -1,10 +1,10 @@
 local function do_keyboard_config(chat_id)
     local keyboard = {
         inline_keyboard = {
-            {{text = '🛠 تنظیمات | Settings', callback_data = 'config:menu:'..chat_id}},
-            {{text = '⚡️ ضد فلود | AntiFlood', callback_data = 'config:antiflood:'..chat_id}},
-            {{text = '🌈 رسانه ها | Media', callback_data = 'config:media:'..chat_id}},
-            {{text = '📃 دیگر | Others', callback_data = '!home2'}},            
+            {{text = '🛠 Settings', callback_data = 'config:menu:'..chat_id}},
+            {{text = '⚡ AntiFlood', callback_data = 'config:antiflood:'..chat_id}},
+            {{text = '🌈 Media', callback_data = 'config:media:'..chat_id}},
+            {{text = '📃 Others', callback_data = '!home2'}},            
         }
     }
     
@@ -18,13 +18,13 @@ local function action(msg, blocks)
     local keyboard = do_keyboard_config(chat_id)
     if msg.cb then
         chat_id = msg.target_id
-        api.editMessageText(msg.chat.id, msg.message_id, '_ کیبورد رو برای تغیر تنظیمات انتخاب کن_' ,keyboard, true)
+        api.editMessageText(msg.chat.id, msg.message_id, '_ select one of keyboards_' ,keyboard, true)
     else
         if not roles.is_admin_cached(msg) then return end
-        local res = api.sendKeyboard(msg.from.id, '_ کیبورد رو برای تغیر تنظیمات انتخاب کن_', keyboard, true)
+        local res = api.sendKeyboard(msg.from.id, '_navigate keyboard to change settings_', keyboard, true)
         if not misc.is_silentmode_on(msg.chat.id) then --send the responde in the group only if the silent mode is off
             if res then
-                api.sendMessage(msg.chat.id, '\n'..config.info..'👤 من به شما تنظیمات،ضد فلود و رسانه ها را فرستادم', true)
+                api.sendMessage(msg.chat.id, '\n'..config.info..'👤I Send you all group settings' true)
             else
                 misc.sendStartMe(msg, msg.ln)
             end
