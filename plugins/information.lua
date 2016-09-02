@@ -2,13 +2,13 @@ local function do_keyboard_robot()
     local keyboard = {}
     keyboard.inline_keyboard = {
 		{
-    					{text = '📁 کانال ما🏾', url = 'https://telegram.me/spamproofchannel'},
+    					{text = '📁 Channel🏾', url = 'https://telegram.me/spamproofchannel'},
     					},
     					{
-    		    		{text = '👤 گروه ها', callback_data = 'private:groups'},
+    		    		{text = '👤 Groups', callback_data = 'private:groups'},
 	    },
 	    {
-	    {text = '🔙 برگشت', callback_data = '!home2'}
+	    {text = '🔙 Back', callback_data = '!home2'}
         }
     }
     return keyboard
@@ -44,7 +44,7 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
 if query == 'robot' then
-            local text = [[📊 اطلاعات :]]
+            local text = [[📊Information :]]
             local keyboard = do_keyboard_robot()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
