@@ -175,7 +175,7 @@ The inline keyboard has three sub-menus:
                     ..'• ✍🏻*You can write tules and about for your group*\n'
                     ..'• 🔰*I Auto Switch AntiSpam Mode!*🔰\n'
                     ..'• ⚠*You Can Warn USers When They Sends : gif - photo - sticker - film*\n'
-                    ..'•For use me geting admin me in your group \n[ 🐳 Make SpamProof Admin 🐳](https://telegram.me/SpamProofChannel/2) \n'
+                    ..'•For use me geting admin me in your group \n[🐳 MakeSnakeButler Admin 🐳](https://telegram.me/SpamProofChannel/2) \n'
                     ..'💻 Developer : [Arian](https://telegram.me/arian721) \n'
                     ..'For Change Languages To *Persian*,Send /lang Then Click On Fa\n',
             group_success = '_I\'ve sent you the help message in private_',
