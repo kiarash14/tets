@@ -5,8 +5,8 @@ local function make_keyboard(mod, mod_current_position)
 	    local list = {
                 ['BanHammer'] = 'banhammer',
                 ['Info'] ='info',
-                ['Flood Manager] = 'flood',
-                ['Media] = 'media',
+                ['Flood Manager'] = 'flood',
+                ['Media'] = 'media',
                 ['Welcome'] = 'welcome',
                 ['Settings'] = 'settings',
                 ['Extra'] = 'extra',
