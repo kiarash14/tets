@@ -3,13 +3,13 @@ local function do_keyboard_private3()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '📁 اطلاعات', callback_data = '!robot'},
+    		{text = '👾 Information', callback_data = '!robot'},
 	        },
                 {
-	        {text = '🔙 برگشت به منوی اصلی', callback_data = '!back'},
+	        {text = '🔙 Back to Main Menu', callback_data = '!back'},
                 },
                 {
-                {text = '🔙 برگشت', callback_data = 'user'},
+                {text = '🔙 Back To Help', callback_data = 'user'},
             }
     }
     return keyboard
@@ -30,7 +30,7 @@ local action = function(msg, blocks, ln)
         db:hset('bot:users', msg.from.id, 'xx')
         db:hincrby('bot:general', 'users', 1)
         if msg.chat.type == 'private' then
-            local message = [[🎲 اطلاعات دیگر:]]
+            local message = [[🎲Others:]]
             local keyboard = do_keyboard_private3()
             api.sendKeyboard(msg.from.id, message, keyboard, true)
             end
@@ -45,7 +45,7 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
 if query == 'home2' then
-            local text = [[🎲 اطلاعات دیگر:]]
+            local text = [[🎲 Others:]]
             local keyboard = do_keyboard_private3()
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
 end
