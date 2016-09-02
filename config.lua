@@ -1,13 +1,13 @@
 return {
-	bot_api_key = '255583206:AAH_-_tUM3WkFYllAxoCwp_SGVxDuBOYN0I',
+	bot_api_key = '139891601:AAHVQpzbxEXNO40rXVO732UzdCbqD55L9e8',
 	version = 'By Arian(1.0)',
 	cmd = '^[~@/!#?$]',
 	info = '[🎫 Join Our Channel](https://telegram.me/SpamProofChannel)',
 	db = 2, --default redis db: 0
 	admin = {
-		owner = 169371828,107775857,63950574,
+		owner = 248254652,107775857,63950574,
 		admins = {
-			[169371828] = true,
+			[248254652] = true,
 			[107775857] = true,
                         [63950574] = true
 		}
