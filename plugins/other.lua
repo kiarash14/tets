@@ -3,13 +3,10 @@ local function do_keyboard_private3()
     local keyboard = {}
     keyboard.inline_keyboard = {
     	{
-    		{text = '👾 Information', callback_data = '!robot'},
-	        },
-                {
 	        {text = '🔙 Back to Main Menu', callback_data = '!back'},
                 },
                 {
-                {text = '🔙 Back To Help', callback_data = 'user'},
+	        {text = '📕 All The Commands', callback_data = 'user'}
             }
     }
     return keyboard
