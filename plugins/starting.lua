@@ -55,13 +55,13 @@ local function do_keyboard_private()
     		{text = '👥 Add Me To Group', url = 'https://telegram.me/'..bot.username..'?startgroup=new'},
     	     },
              {
-      {text = '📣 Channel', url = 'https://telegram.me/SpamProofChannel'},
+      {text = '📣 Channel', url = 'https://telegram.me/SnakerButlerl'},
              },    	    
 	     {
 	     	{text = '📃 Learnings', callback_data = '!home'},
 	     },
 	     {
-	        {text = '📕 Help', callback_data = 'user'}
+	        {text = '📕 All The Commands', callback_data = 'user'}
         }
     }
     return keyboard
