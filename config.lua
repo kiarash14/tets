@@ -59,7 +59,6 @@ return {
 	},
 	available_languages = {
 		['en'] = 'English 🇬🇧',
-		['fa'] = 'فارسی 🇮🇷'
 		--more to come
 	},
 	media_list = {
